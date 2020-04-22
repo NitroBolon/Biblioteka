@@ -20,6 +20,7 @@ Tabele:
   Tabela Kary przechowuje wszystkie wypożyczenia, plus daty wypożyczenia/zwrotu i ewentualne naliczone kary. 
   
   Interfejs: 
+  
     Książki 
     W wyznaczonym do tego miejscu wyświetlana jest lista książek. Po kliknięciu na odpowiedni przycisk 
     można dodać lub usunąć pozycję, a po kliknięciu na pozycję z listy można ją edytować. 
