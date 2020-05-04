@@ -23,6 +23,14 @@ namespace Biblioteka
         public MainWindow()
         {
             InitializeComponent();
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+        }
+
+        private void klawisz_dalej(object sender, RoutedEventArgs e)
+        {
+            MainMenu menu = new MainMenu();
+            menu.Show();
+            this.Close();
         }
     }
 }
