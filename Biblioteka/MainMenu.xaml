@@ -7,6 +7,11 @@
         mc:Ignorable="d" FontSize="15" Closing="MainMenu_Closing"
         Title="Biblioteka" Height="500" Width="800"
         MinHeight="500" MinWidth="600">
+
+    <Window.Resources>
+        
+    </Window.Resources>
+    
     <Grid>
       <ContentControl x:Name="contentBox"/>
     </Grid>
