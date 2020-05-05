@@ -64,3 +64,5 @@ C:\Users\Bolo\Desktop\bbt\Biblioteka\obj\Debug\Biblioteka.Properties.Resources.r
 C:\Users\Bolo\Desktop\bbt\Biblioteka\obj\Debug\Biblioteka.csproj.GenerateResource.cache
 C:\Users\Bolo\Desktop\bbt\Biblioteka\obj\Debug\Biblioteka.exe
 C:\Users\Bolo\Desktop\bbt\Biblioteka\obj\Debug\Biblioteka.pdb
+C:\Users\Bolo\Desktop\biblioteka\Biblioteka\bin\Debug\SplashScreen.dll
+C:\Users\Bolo\Desktop\biblioteka\Biblioteka\obj\Debug\Biblioteka.csproj.CopyComplete

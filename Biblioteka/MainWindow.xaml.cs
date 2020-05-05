@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Biblioteka
 {
@@ -24,9 +25,18 @@ namespace Biblioteka
         {
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
-        }
 
-        private void klawisz_dalej(object sender, RoutedEventArgs e)
+            //ładowanie danych programu, albo po prostu opóźnienie xD
+
+            var timer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(5) };
+            timer.Start();
+            timer.Tick += (sender, args) =>
+            {
+                timer.Stop();
+                all_loaded();
+            };
+        }
+        void all_loaded()
         {
             MainMenu menu = new MainMenu();
             menu.Show();
