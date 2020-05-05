@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Bolo\Desktop\biblioteka\Biblioteka\obj\Debug\
+C:\Users\Bolo\Desktop\dasd\Biblioteka\obj\Debug\
 Biblioteka
 none
 false
 DEBUG;TRACE
-C:\Users\Bolo\Desktop\biblioteka\Biblioteka\App.xaml
-7568098840
+C:\Users\Bolo\Desktop\dasd\Biblioteka\App.xaml
+8-469606128
 
 15-181684365
 14-1290796308
-MainMenu.xaml;MainMenuView.xaml;MainWindow.xaml;ManageBooks.xaml;ManageBorrows.xaml;ManageClients.xaml;ManageFines.xaml;
+MainMenu.xaml;MainMenuView.xaml;MainWindow.xaml;ManageBooks.xaml;ManageBorrows.xaml;ManageClients.xaml;ManageFines.xaml;Resources.xaml;
 
-True
+False
 
