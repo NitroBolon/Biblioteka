@@ -4,12 +4,106 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Biblioteka"
-        mc:Ignorable="d" FontSize="55"
-        Title="Biblioteka" Height="450" Width="800">
+        mc:Ignorable="d" FontSize="15" ResizeMode="NoResize"
+        WindowStyle="None"
+        Title="Biblioteka" Height="450" Width="400">
+    <Window.Resources>
+        <Storyboard x:Key="Storyboard1" AutoReverse="True" RepeatBehavior="Forever">
+            <!--sekwencja ruchu-->
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="rectangle4">
+                <EasingThicknessKeyFrame KeyTime="0" Value="270,310,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:0.3" Value="270,318,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:0.6" Value="270,325,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:0.8" Value="270,332,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:0.12" Value="270,340,0,0"/>
+            </ThicknessAnimationUsingKeyFrames>
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="rectangle3">
+                <EasingThicknessKeyFrame KeyTime="0" Value="230,340,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:0.3" Value="230,332,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:0.6" Value="230,325,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:0.8" Value="230,318,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:0.12" Value="230,310,0,0"/>
+            </ThicknessAnimationUsingKeyFrames>
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="rectangle2">
+                <EasingThicknessKeyFrame KeyTime="0" Value="190,310,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:0.3" Value="190,318,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:0.6" Value="190,325,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:0.8" Value="190,332,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:0.12" Value="190,340,0,0"/>
+            </ThicknessAnimationUsingKeyFrames>
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="rectangle1">
+                <EasingThicknessKeyFrame KeyTime="0" Value="150,340,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:0.3" Value="150,332,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:0.6" Value="150,325,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:0.8" Value="150,318,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:0.12" Value="150,310,0,0"/>
+            </ThicknessAnimationUsingKeyFrames>
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="rectangle">
+                <EasingThicknessKeyFrame KeyTime="0" Value="110,310,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:0.3" Value="110,318,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:0.6" Value="110,325,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:0.8" Value="110,332,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:0.12" Value="110,340,0,0"/>
+            </ThicknessAnimationUsingKeyFrames>
+            <!--sekwencja koloru-->
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle4">
+                <EasingColorKeyFrame KeyTime="0" Value="#a8a8a8"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.3" Value="#dbdbdb"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.6" Value="#a8a8a8"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.8" Value="#dbdbdb"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.12" Value="#a8a8a8"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle3">
+                <EasingColorKeyFrame KeyTime="0" Value="#a8a8a8"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.3" Value="#dbdbdb"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.6" Value="#a8a8a8"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.8" Value="#dbdbdb"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.12" Value="#a8a8a8"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle2">
+                <EasingColorKeyFrame KeyTime="0" Value="#a8a8a8"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.3" Value="#dbdbdb"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.6" Value="#a8a8a8"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.8" Value="#dbdbdb"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.12" Value="#a8a8a8"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle1">
+                <EasingColorKeyFrame KeyTime="0" Value="#a8a8a8"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.3" Value="#dbdbdb"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.6" Value="#a8a8a8"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.8" Value="#dbdbdb"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.12" Value="#a8a8a8"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
+                <EasingColorKeyFrame KeyTime="0" Value="#a8a8a8"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.3" Value="#dbdbdb"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.6" Value="#a8a8a8"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.8" Value="#dbdbdb"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.12" Value="#a8a8a8"/>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+        </EventTrigger>
+    </Window.Triggers>
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#33A0AABE" Offset="0.163"/>
+                <GradientStop Color="#F71E1ECD" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Label>OKIENKO ŁADOWANIA</Label>
-            <Button Click="klawisz_dalej">DALIJ</Button>
+            <Label FontSize="55">Bibliotex</Label>
+            <Label HorizontalAlignment="Center">Best library solution</Label>
         </StackPanel>
+        <Rectangle x:Name="rectangle" Fill="Black" HorizontalAlignment="Left" Height="20" Margin="110,310,0,0" VerticalAlignment="Top" Width="20" RadiusX="60" RadiusY="60"/>
+        <Rectangle x:Name="rectangle1" Fill="Black" HorizontalAlignment="Left" Height="20" Margin="150,340,0,0" VerticalAlignment="Top" Width="20" RadiusX="60" RadiusY="60"/>
+        <Rectangle x:Name="rectangle2" Fill="Black" HorizontalAlignment="Left" Height="20" Margin="190,310,0,0" VerticalAlignment="Top" Width="20" RadiusX="60" RadiusY="60"/>
+        <Rectangle x:Name="rectangle3" Fill="Black" HorizontalAlignment="Left" Height="20" Margin="230,340,0,0" VerticalAlignment="Top" Width="20" RadiusX="60" RadiusY="60"/>
+        <Rectangle x:Name="rectangle4" Fill="Black" HorizontalAlignment="Left" Height="20" Margin="270,310,0,0" VerticalAlignment="Top" Width="20" RadiusX="60" RadiusY="60"/>
+
     </Grid>
 </Window>
