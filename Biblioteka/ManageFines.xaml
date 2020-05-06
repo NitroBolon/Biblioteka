@@ -6,22 +6,26 @@
              xmlns:local="clr-namespace:Biblioteka"
              mc:Ignorable="d"  Loaded="ManageFines_Loaded"
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Margin="50,50,50,50">
+    <Grid Margin="10">
         <DockPanel>
             <StackPanel DockPanel.Dock="Right" Margin="10" MinWidth="200">
                 <Label>Indeks</Label>
-                <TextBox></TextBox>
+                <TextBox Style="{StaticResource CustomTextBoxStyle}" Margin="5 0 5 0"></TextBox>
                 <Label>Wypożyczenie</Label>
-                <ComboBox></ComboBox>
+                <ComboBox  Margin="5 0 5 0" Style="{StaticResource ComboBoxStyle}">
+                    <ComboBoxItem>chuj</ComboBoxItem>
+                    <ComboBoxItem>dupa</ComboBoxItem>
+                    <ComboBoxItem>cycki</ComboBoxItem>
+                </ComboBox>
                 <Label>Data wypożyczenia</Label>
-                <DatePicker></DatePicker>
+                <DatePicker Margin="5 0 5 0"></DatePicker>
                 <Label>Data zwrotu</Label>
-                <DatePicker></DatePicker>
+                <DatePicker Margin="5 0 5 0"></DatePicker>
                 <Label>Kara</Label>
-                <TextBox></TextBox>
-                <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
-                    <Button Margin="10">Zapisz</Button>
-                    <Button Margin="10" Click="wyjdz_Click">Wyjdź</Button>
+                <TextBox Style="{StaticResource CustomTextBoxStyle}" Margin="5 0 5 0"></TextBox>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Margin="10"  Style="{StaticResource CustomButtonStyle}">Zapisz</Button>
+                    <Button Margin="10" Click="wyjdz_Click" Style="{StaticResource CustomButtonStyle}">Wyjdź</Button>
                 </StackPanel>
             </StackPanel>
             <ListBox Margin="10">
