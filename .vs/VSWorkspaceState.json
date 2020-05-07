@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Biblioteka"
   ],
-  "SelectedNode": "\\Biblioteka.sln",
+  "SelectedNode": "\\Biblioteka\\ManageClients.xaml",
   "PreviewInSolutionExplorer": false
 }
