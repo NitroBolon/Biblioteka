@@ -23,6 +23,7 @@ namespace Biblioteka
         public ManageClients()
         {
             InitializeComponent();
+
         }
 
         private void wyjdz_Click(object sender, RoutedEventArgs e)

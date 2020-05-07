@@ -8,26 +8,54 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid Margin="50,50,50,50">
-            <DockPanel>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="313*"/>
+            <RowDefinition Height="37*"/>
+          </Grid.RowDefinitions>
+          <DockPanel Grid.RowSpan="2">
+            <DockPanel DockPanel.Dock="Top" HorizontalAlignment="Left" Width="690"  Margin="10,0,230,0">
+              <DockPanel DockPanel.Dock="Top">
+                <Label>Filtrowanie</Label>
+              </DockPanel>
+              <DockPanel>
+                <TextBox Style="{StaticResource CustomTextBoxStyle}" Width="210" Height="30" Text="Autor"></TextBox>
+                <TextBox Style="{StaticResource CustomTextBoxStyle}" Width="210" Height="30" Margin="0,0,225,0" Text="Tytuł"></TextBox>
+              </DockPanel>
+            </DockPanel>
+          <DockPanel DockPanel.Dock="Top" Margin="0,0,0,-15">
                 <StackPanel DockPanel.Dock="Right" Margin="10" MinWidth="200">
                     <Label>Indeks</Label>
-                    <TextBox></TextBox>
+                    <TextBox Style="{StaticResource CustomTextBoxStyle}"></TextBox>
                     <Label>Tytuł</Label>
-                    <TextBox></TextBox>
+                    <TextBox Style="{StaticResource CustomTextBoxStyle}"></TextBox>
                     <Label>Autor</Label>
-                    <TextBox></TextBox>
+                    <TextBox Style="{StaticResource CustomTextBoxStyle}"></TextBox>
                     <Label>Rok wydania</Label>
-                    <TextBox></TextBox>
+                    <TextBox Style="{StaticResource CustomTextBoxStyle}"></TextBox>
                     <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
-                        <Button Margin="10">Zapisz</Button>
-                        <Button Margin="10" Click="wyjdz_Click">Wyjdź</Button>
+                        <Button Margin="10"  Style="{StaticResource CustomButtonStyle}">Zapisz</Button>
+                        <Button Margin="10" Click="wyjdz_Click"  Style="{StaticResource CustomButtonStyle}">Wyjdź</Button>
                     </StackPanel>
                 </StackPanel>
-                <ListBox Margin="10">
+                <ListView Margin="10">
+                  <ListView.View>
+                    <GridView>
+                      <GridViewColumn Header="Indeks" Width="80" DisplayMemberBinding="{Binding q}" >
+                      </GridViewColumn>
+                      <GridViewColumn Header="Autor" Width="120" DisplayMemberBinding="{Binding s}">
+                      </GridViewColumn>
+                      <GridViewColumn Header="Tytuł" Width="150" DisplayMemberBinding="{Binding e}" >
+                      </GridViewColumn>
+                      <GridViewColumn Header="Rok wydania" Width="90" DisplayMemberBinding="{Binding a}" >
+                      </GridViewColumn>
 
-                </ListBox>
+                    </GridView>
+
+                  </ListView.View>
+                </ListView>
 
             </DockPanel>
+          </DockPanel>
         </Grid>
     </Grid>
 </UserControl>
