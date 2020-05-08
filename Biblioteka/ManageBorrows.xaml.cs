@@ -36,5 +36,14 @@ namespace Biblioteka
             MainMenu parentWindow = Window.GetWindow(this) as MainMenu;
             parentWindow.Title = "Bibliotex - Wypożyczenia";
         }
+
+        private void SUserTextBox_Clearing(object sender, MouseButtonEventArgs e)
+        {
+            search_user.Text="";
+        }
+        private void SBookTextBox_Clearing(object sender, MouseButtonEventArgs e)
+        {
+            search_book.Text="";
+        }
     }
 }

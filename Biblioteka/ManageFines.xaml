@@ -13,9 +13,9 @@
                 <TextBox Style="{StaticResource CustomTextBoxStyle}" Margin="5 0 5 0"></TextBox>
                 <Label>Wypożyczenie</Label>
                 <ComboBox  Margin="5 0 5 0" Style="{StaticResource ComboBoxStyle}">
-                    <ComboBoxItem>chuj</ComboBoxItem>
-                    <ComboBoxItem>dupa</ComboBoxItem>
-                    <ComboBoxItem>cycki</ComboBoxItem>
+                    <ComboBoxItem>i1</ComboBoxItem>
+                    <ComboBoxItem>i2</ComboBoxItem>
+                    <ComboBoxItem>i3</ComboBoxItem>
                 </ComboBox>
                 <Label>Data wypożyczenia</Label>
                 <DatePicker Margin="5 0 5 0"></DatePicker>
