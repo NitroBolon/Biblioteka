@@ -37,5 +37,19 @@ namespace Biblioteka
             MainMenu parentWindow = Window.GetWindow(this) as MainMenu;
             parentWindow.Title = "Bibliotex - Klienci";
         }
+
+        private void zapisz_Click(object sender, RoutedEventArgs e)
+        {
+            try  //zapisać
+            {
+                CustomMessageBox.ShowDialog("Klient został zapisany poprawnie!");
+                //CustomMessageBox.ShowDialog("Element zapisany poprawnie!");
+            }
+            catch (Exception)
+            {
+                CustomMessageBox.ShowDialog("Klient nie został zapisany!");
+                throw;
+            }
+        }
     }
 }
