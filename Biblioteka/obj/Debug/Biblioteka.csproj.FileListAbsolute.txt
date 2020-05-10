@@ -122,3 +122,34 @@ C:\Users\Bolo\Desktop\bbt\Biblioteka\Biblioteka\obj\Debug\Biblioteka.Properties.
 C:\Users\Bolo\Desktop\bbt\Biblioteka\Biblioteka\obj\Debug\Biblioteka.csproj.GenerateResource.cache
 C:\Users\Bolo\Desktop\bbt\Biblioteka\Biblioteka\obj\Debug\Biblioteka.exe
 C:\Users\Bolo\Desktop\bbt\Biblioteka\Biblioteka\obj\Debug\Biblioteka.pdb
+D:\Kacper\Sztudien\SEM6\BAU WTF\Projekt Biblioteka\Biblioteka\bin\Debug\Biblioteka.exe.config
+D:\Kacper\Sztudien\SEM6\BAU WTF\Projekt Biblioteka\Biblioteka\bin\Debug\Biblioteka.exe
+D:\Kacper\Sztudien\SEM6\BAU WTF\Projekt Biblioteka\Biblioteka\bin\Debug\Biblioteka.pdb
+D:\Kacper\Sztudien\SEM6\BAU WTF\Projekt Biblioteka\Biblioteka\obj\Debug\Biblioteka.csprojAssemblyReference.cache
+D:\Kacper\Sztudien\SEM6\BAU WTF\Projekt Biblioteka\Biblioteka\obj\Debug\MainMenu.g.cs
+D:\Kacper\Sztudien\SEM6\BAU WTF\Projekt Biblioteka\Biblioteka\obj\Debug\MainMenuView.g.cs
+D:\Kacper\Sztudien\SEM6\BAU WTF\Projekt Biblioteka\Biblioteka\obj\Debug\MainWindow.g.cs
+D:\Kacper\Sztudien\SEM6\BAU WTF\Projekt Biblioteka\Biblioteka\obj\Debug\ManageBooks.g.cs
+D:\Kacper\Sztudien\SEM6\BAU WTF\Projekt Biblioteka\Biblioteka\obj\Debug\ManageBorrows.g.cs
+D:\Kacper\Sztudien\SEM6\BAU WTF\Projekt Biblioteka\Biblioteka\obj\Debug\ManageClients.g.cs
+D:\Kacper\Sztudien\SEM6\BAU WTF\Projekt Biblioteka\Biblioteka\obj\Debug\ManageFines.g.cs
+D:\Kacper\Sztudien\SEM6\BAU WTF\Projekt Biblioteka\Biblioteka\obj\Debug\App.g.cs
+D:\Kacper\Sztudien\SEM6\BAU WTF\Projekt Biblioteka\Biblioteka\obj\Debug\Biblioteka_MarkupCompile.cache
+D:\Kacper\Sztudien\SEM6\BAU WTF\Projekt Biblioteka\Biblioteka\obj\Debug\Biblioteka_MarkupCompile.lref
+D:\Kacper\Sztudien\SEM6\BAU WTF\Projekt Biblioteka\Biblioteka\obj\Debug\App.baml
+D:\Kacper\Sztudien\SEM6\BAU WTF\Projekt Biblioteka\Biblioteka\obj\Debug\MainMenu.baml
+D:\Kacper\Sztudien\SEM6\BAU WTF\Projekt Biblioteka\Biblioteka\obj\Debug\MainMenuView.baml
+D:\Kacper\Sztudien\SEM6\BAU WTF\Projekt Biblioteka\Biblioteka\obj\Debug\MainWindow.baml
+D:\Kacper\Sztudien\SEM6\BAU WTF\Projekt Biblioteka\Biblioteka\obj\Debug\ManageBooks.baml
+D:\Kacper\Sztudien\SEM6\BAU WTF\Projekt Biblioteka\Biblioteka\obj\Debug\ManageBorrows.baml
+D:\Kacper\Sztudien\SEM6\BAU WTF\Projekt Biblioteka\Biblioteka\obj\Debug\ManageClients.baml
+D:\Kacper\Sztudien\SEM6\BAU WTF\Projekt Biblioteka\Biblioteka\obj\Debug\ManageFines.baml
+D:\Kacper\Sztudien\SEM6\BAU WTF\Projekt Biblioteka\Biblioteka\obj\Debug\Resources.baml
+D:\Kacper\Sztudien\SEM6\BAU WTF\Projekt Biblioteka\Biblioteka\obj\Debug\Biblioteka.g.resources
+D:\Kacper\Sztudien\SEM6\BAU WTF\Projekt Biblioteka\Biblioteka\obj\Debug\Biblioteka.Properties.Resources.resources
+D:\Kacper\Sztudien\SEM6\BAU WTF\Projekt Biblioteka\Biblioteka\obj\Debug\Biblioteka.csproj.GenerateResource.cache
+D:\Kacper\Sztudien\SEM6\BAU WTF\Projekt Biblioteka\Biblioteka\obj\Debug\Biblioteka.csproj.CoreCompileInputs.cache
+D:\Kacper\Sztudien\SEM6\BAU WTF\Projekt Biblioteka\Biblioteka\obj\Debug\Biblioteka.exe
+D:\Kacper\Sztudien\SEM6\BAU WTF\Projekt Biblioteka\Biblioteka\obj\Debug\Biblioteka.pdb
+D:\Kacper\Sztudien\SEM6\BAU WTF\Projekt Biblioteka\Biblioteka\obj\Debug\CustomMessageBoxView.g.cs
+D:\Kacper\Sztudien\SEM6\BAU WTF\Projekt Biblioteka\Biblioteka\obj\Debug\CustomMessageBoxView.baml
