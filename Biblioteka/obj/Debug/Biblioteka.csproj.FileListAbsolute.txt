@@ -153,3 +153,34 @@ D:\Kacper\Sztudien\SEM6\BAU WTF\Projekt Biblioteka\Biblioteka\obj\Debug\Bibliote
 D:\Kacper\Sztudien\SEM6\BAU WTF\Projekt Biblioteka\Biblioteka\obj\Debug\Biblioteka.pdb
 D:\Kacper\Sztudien\SEM6\BAU WTF\Projekt Biblioteka\Biblioteka\obj\Debug\CustomMessageBoxView.g.cs
 D:\Kacper\Sztudien\SEM6\BAU WTF\Projekt Biblioteka\Biblioteka\obj\Debug\CustomMessageBoxView.baml
+C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\bin\Debug\Biblioteka.exe.config
+C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\bin\Debug\Biblioteka.exe
+C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\bin\Debug\Biblioteka.pdb
+C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\obj\Debug\Biblioteka.csprojAssemblyReference.cache
+C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\obj\Debug\CustomMessageBoxView.g.cs
+C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\obj\Debug\MainMenu.g.cs
+C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\obj\Debug\MainMenuView.g.cs
+C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\obj\Debug\MainWindow.g.cs
+C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\obj\Debug\ManageBooks.g.cs
+C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\obj\Debug\ManageBorrows.g.cs
+C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\obj\Debug\ManageClients.g.cs
+C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\obj\Debug\ManageFines.g.cs
+C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\obj\Debug\App.g.cs
+C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\obj\Debug\Biblioteka_MarkupCompile.cache
+C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\obj\Debug\Biblioteka_MarkupCompile.lref
+C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\obj\Debug\App.baml
+C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\obj\Debug\CustomMessageBoxView.baml
+C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\obj\Debug\MainMenu.baml
+C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\obj\Debug\MainMenuView.baml
+C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\obj\Debug\MainWindow.baml
+C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\obj\Debug\ManageBooks.baml
+C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\obj\Debug\ManageBorrows.baml
+C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\obj\Debug\ManageClients.baml
+C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\obj\Debug\ManageFines.baml
+C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\obj\Debug\Resources.baml
+C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\obj\Debug\Biblioteka.g.resources
+C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\obj\Debug\Biblioteka.Properties.Resources.resources
+C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\obj\Debug\Biblioteka.csproj.GenerateResource.cache
+C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\obj\Debug\Biblioteka.csproj.CoreCompileInputs.cache
+C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\obj\Debug\Biblioteka.exe
+C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\obj\Debug\Biblioteka.pdb
