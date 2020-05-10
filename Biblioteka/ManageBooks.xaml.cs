@@ -36,5 +36,18 @@ namespace Biblioteka
             MainMenu parentWindow = Window.GetWindow(this) as MainMenu;
             parentWindow.Title = "Bibliotex - Katalog";
         }
+
+        private void zapisz_Click(object sender, RoutedEventArgs e)
+        {
+            try  //zapisać
+            {
+                CustomMessageBox.ShowDialog("Książka zapisana poprawnie!");
+            }
+            catch (Exception)
+            {
+                CustomMessageBox.ShowDialog("Książka nie została zapisana!");
+                throw;
+            }
+        }
     }
 }
