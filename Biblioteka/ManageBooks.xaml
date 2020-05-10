@@ -37,16 +37,16 @@
                         <Button Margin="10" Click="wyjdz_Click"  Style="{StaticResource CustomButtonStyle}">Wyjdź</Button>
                     </StackPanel>
                 </StackPanel>
-                <ListView Margin="10">
+                <ListView Margin="10" Style ="{StaticResource CustomListView}">
                   <ListView.View>
                     <GridView>
                       <GridViewColumn Header="Indeks" Width="80" DisplayMemberBinding="{Binding q}" >
                       </GridViewColumn>
-                      <GridViewColumn Header="Autor" Width="120" DisplayMemberBinding="{Binding s}">
+                      <GridViewColumn Header="Autor" Width="115" DisplayMemberBinding="{Binding s}">
                       </GridViewColumn>
-                      <GridViewColumn Header="Tytuł" Width="150" DisplayMemberBinding="{Binding e}" >
+                      <GridViewColumn Header="Tytuł" Width="145" DisplayMemberBinding="{Binding e}" >
                       </GridViewColumn>
-                      <GridViewColumn Header="Rok wydania" Width="90" DisplayMemberBinding="{Binding a}" >
+                      <GridViewColumn Header="Rok wydania" Width="100" DisplayMemberBinding="{Binding a}" >
                       </GridViewColumn>
 
                     </GridView>
