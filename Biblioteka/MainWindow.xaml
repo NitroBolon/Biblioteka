@@ -8,7 +8,7 @@
         WindowStyle="None"
         Title="Biblioteka" Height="450" Width="400">
     <Window.Resources>
-        <Storyboard x:Key="Storyboard1" AutoReverse="True" RepeatBehavior="Forever">
+        <Storyboard x:Key="Storyboard_Load" AutoReverse="True" RepeatBehavior="Forever">
             <!--sekwencja ruchu-->
             <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="rectangle4">
                 <EasingThicknessKeyFrame KeyTime="0" Value="270,310,0,0"/>
@@ -82,10 +82,66 @@
                 <EasingColorKeyFrame KeyTime="0:0:0.12" Value="#a8a8a8"/>
             </ColorAnimationUsingKeyFrames>
         </Storyboard>
+        <Storyboard x:Key="Storyboard_Letters">
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="letterBd">
+                <EasingThicknessKeyFrame KeyTime="0" Value="500,130,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:0.6" Value="500,130,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:2" Value="0,130,194,0"/>
+            </ThicknessAnimationUsingKeyFrames>
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="letterI1">
+                <EasingThicknessKeyFrame KeyTime="0" Value="500,130,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:0.6" Value="500,130,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:2" Value="0,130,144,0"/>
+            </ThicknessAnimationUsingKeyFrames>
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="letterBm">
+                <EasingThicknessKeyFrame KeyTime="0" Value="500,130,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:0.6" Value="500,130,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:2" Value="0,130,94,0"/>
+            </ThicknessAnimationUsingKeyFrames>
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="letterL">
+                <EasingThicknessKeyFrame KeyTime="0" Value="500,130,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:0.6" Value="500,130,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:2" Value="0,130,44,0"/>
+            </ThicknessAnimationUsingKeyFrames>
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="letterI2">
+                <EasingThicknessKeyFrame KeyTime="0" Value="500,130,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:0.6" Value="500,130,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:2" Value="0,130,14,0"/>
+            </ThicknessAnimationUsingKeyFrames>
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="letterO">
+                <EasingThicknessKeyFrame KeyTime="0" Value="500,130,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:0.6" Value="500,130,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:2" Value="35,130,0,0"/>
+            </ThicknessAnimationUsingKeyFrames>
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="letterT">
+                <EasingThicknessKeyFrame KeyTime="0" Value="500,130,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:0.6" Value="500,130,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:2" Value="90,130,0,0"/>
+            </ThicknessAnimationUsingKeyFrames>
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="letterE">
+                <EasingThicknessKeyFrame KeyTime="0" Value="500,130,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:0.6" Value="500,130,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:2" Value="144,130,0,0"/>
+            </ThicknessAnimationUsingKeyFrames>
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="letterX">
+                <EasingThicknessKeyFrame KeyTime="0" Value="500,130,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:0.6" Value="500,130,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:2" Value="200,130,0,0"/>
+            </ThicknessAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Storyboard_Book">
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="book">
+                <EasingThicknessKeyFrame KeyTime="0" Value="0,90,550,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:0.6" Value="0,90,550,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:2" Value="0,90,0,0"/>
+            </ThicknessAnimationUsingKeyFrames>
+        </Storyboard>
     </Window.Resources>
     <Window.Triggers>
         <EventTrigger RoutedEvent="FrameworkElement.Loaded">
-            <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+            <BeginStoryboard Storyboard="{StaticResource Storyboard_Letters}"/>
+            <BeginStoryboard Storyboard="{StaticResource Storyboard_Load}"/>
+            <BeginStoryboard Storyboard="{StaticResource Storyboard_Book}"/>
         </EventTrigger>
     </Window.Triggers>
     <Grid>
@@ -96,7 +152,6 @@
             </LinearGradientBrush>
         </Grid.Background>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Label FontSize="55">Bibliotex</Label>
             <Label HorizontalAlignment="Center">Best library solution</Label>
         </StackPanel>
         <Rectangle x:Name="rectangle" Fill="Black" HorizontalAlignment="Left" Height="20" Margin="110,310,0,0" VerticalAlignment="Top" Width="20" RadiusX="60" RadiusY="60"/>
@@ -105,5 +160,18 @@
         <Rectangle x:Name="rectangle3" Fill="Black" HorizontalAlignment="Left" Height="20" Margin="230,340,0,0" VerticalAlignment="Top" Width="20" RadiusX="60" RadiusY="60"/>
         <Rectangle x:Name="rectangle4" Fill="Black" HorizontalAlignment="Left" Height="20" Margin="270,310,0,0" VerticalAlignment="Top" Width="20" RadiusX="60" RadiusY="60"/>
 
+        <Label FontSize="60" x:Name="letterBd" HorizontalAlignment="Center" Margin="500,130,0,0">B</Label>
+        <Label FontSize="60" x:Name="letterI1" HorizontalAlignment="Center" Margin="500,130,0,0">i</Label>
+        <Label FontSize="60" x:Name="letterBm" HorizontalAlignment="Center" Margin="500,130,0,0">b</Label>
+        <Label FontSize="60" x:Name="letterL" HorizontalAlignment="Center" Margin="500,130,0,0">l</Label>
+        <Label FontSize="60" x:Name="letterI2" HorizontalAlignment="Center" Margin="500,130,0,0">i</Label>
+        <Label FontSize="60" x:Name="letterO" HorizontalAlignment="Center" Margin="500,130,0,0">o</Label>
+        <Label FontSize="60" x:Name="letterT" HorizontalAlignment="Center" Margin="500,130,0,0">t</Label>
+        <Label FontSize="60" x:Name="letterE" HorizontalAlignment="Center" Margin="500,130,0,0">e</Label>
+        <Label FontSize="60" x:Name="letterX" HorizontalAlignment="Center" Margin="500,130,0,0">x</Label>
+
+        <Image x:Name="book" Source="https://image.flaticon.com/icons/png/512/130/130304.png" Width="60" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,90,550,0"/>
+
+        <Label VerticalAlignment="Bottom" FontSize="10" FontWeight="Bold" Foreground="#33A0AABE">© MK, MJ, PM - 2020</Label>
     </Grid>
 </Window>

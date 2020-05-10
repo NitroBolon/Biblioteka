@@ -7,25 +7,44 @@
              mc:Ignorable="d" Loaded="ManageBorrows_Loaded"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Grid Margin="50,50,50,50">
-            <DockPanel>
-                <StackPanel DockPanel.Dock="Right" Margin="10" MinWidth="200">
-                    <Label>Indeks</Label>
-                    <TextBox></TextBox>
-                    <Label>Użytkownik</Label>
-                    <ComboBox></ComboBox>
-                    <Label>Książka</Label>
-                    <ComboBox></ComboBox>
-
-                    <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
-                        <Button Margin="10">Zapisz</Button>
-                        <Button Margin="10" Click="wyjdz_Click">Wyjdź</Button>
+        <Grid Margin="10">
+            <DockPanel Grid.RowSpan="2" HorizontalAlignment="Left">
+                <DockPanel DockPanel.Dock="Top" HorizontalAlignment="Left" Width="470"  Margin="10,0,230,0">
+                    <DockPanel DockPanel.Dock="Top">
+                        <Label>Filtrowanie</Label>
+                    </DockPanel>
+                    <DockPanel>
+                        <TextBox x:Name="search_user" Style="{StaticResource CustomTextBoxStyle}" Width="220" Height="30" Text="Użytkownik" MouseDoubleClick="SUserTextBox_Clearing"></TextBox>
+                        <TextBox x:Name="search_book" Style="{StaticResource CustomTextBoxStyle}" Width="220" Height="30" Text="Książka" Margin="10,0,0,0" MouseDoubleClick="SBookTextBox_Clearing"></TextBox>
+                    </DockPanel>
+                </DockPanel>
+                <DockPanel DockPanel.Dock="Top" Margin="0,0,0,0">
+                    <StackPanel DockPanel.Dock="Right" Margin="20,0,0,0" Width="280" MinWidth="200">
+                        <Label>Indeks</Label>
+                        <TextBox Style="{StaticResource CustomTextBoxStyle}"></TextBox>
+                        <Label>Użytkownik</Label>
+                        <ComboBox Style="{StaticResource ComboBoxStyle}"></ComboBox>
+                        <Label>Książka</Label>
+                        <ComboBox Style="{StaticResource ComboBoxStyle}"></ComboBox>
+                        <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
+                            <Button Margin="0,0,10,0"  Style="{StaticResource CustomButtonStyle}">Dodaj nowy</Button>
+                            <Button Margin="0,0,10,0"  Style="{StaticResource CustomButtonStyle}">Modyfikuj</Button>
+                            <Button Click="wyjdz_Click"  Style="{StaticResource CustomButtonStyle}">Wyjdź</Button>
+                        </StackPanel>
                     </StackPanel>
-                </StackPanel>
-                <ListBox Margin="10">
-
-                </ListBox>
-
+                    <ListView Margin="10,10,0,0" Width="465" HorizontalAlignment="Left">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Indeks" Width="120" DisplayMemberBinding="{Binding q}" >
+                                </GridViewColumn>
+                                <GridViewColumn Header="Użytkownik" Width="180" DisplayMemberBinding="{Binding s}">
+                                </GridViewColumn>
+                                <GridViewColumn Header="Książka" Width="180" DisplayMemberBinding="{Binding e}" >
+                                </GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </DockPanel>
             </DockPanel>
         </Grid>
     </Grid>
