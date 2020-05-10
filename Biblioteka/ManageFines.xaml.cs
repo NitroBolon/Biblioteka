@@ -36,5 +36,19 @@ namespace Biblioteka
             MainMenu parentWindow = Window.GetWindow(this) as MainMenu;
             parentWindow.Title = "Bibliotex - Kary";
         }
+
+        private void zapisz_Click(object sender, RoutedEventArgs e)
+        {
+            try  //zapisać
+            {
+                CustomMessageBox.ShowDialog("Element zapisany poprawnie!", CustomMessageBox.Buttons.Yes_No);
+                //CustomMessageBox.ShowDialog("Element zapisany poprawnie!");
+            }
+            catch (Exception)
+            {
+                CustomMessageBox.ShowDialog("Element nie został zapisany!");
+                throw;
+            }
+        }
     }
 }
