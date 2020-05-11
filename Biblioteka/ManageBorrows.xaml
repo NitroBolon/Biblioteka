@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Biblioteka.ManageBorrows"
+<UserControl x:Class="Biblioteka.ManageBorrows"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -27,12 +27,12 @@
                         <Label>Książka</Label>
                         <ComboBox Style="{StaticResource ComboBoxStyle}"></ComboBox>
                         <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
-                            <Button Margin="0,0,10,0"  Style="{StaticResource CustomButtonStyle}">Dodaj nowy</Button>
-                            <Button Margin="0,0,10,0"  Style="{StaticResource CustomButtonStyle}">Modyfikuj</Button>
+                            <Button Margin="0,0,10,0" Click="zapisz_Click" Style="{StaticResource CustomButtonStyle}">Dodaj nowy</Button>
+                            <Button Margin="0,0,10,0" Click="zapisz_Click" Style="{StaticResource CustomButtonStyle}">Modyfikuj</Button>
                             <Button Click="wyjdz_Click"  Style="{StaticResource CustomButtonStyle}">Wyjdź</Button>
                         </StackPanel>
                     </StackPanel>
-                    <ListView Margin="10,10,0,0" Width="465" HorizontalAlignment="Left">
+                    <ListView Margin="10,10,0,0" Width="465" HorizontalAlignment="Left" Style ="{StaticResource CustomListView}">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Indeks" Width="120" DisplayMemberBinding="{Binding q}" >

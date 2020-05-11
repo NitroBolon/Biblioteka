@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,10 +27,32 @@ namespace Biblioteka
 
         private void wyjdz_Click(object sender, RoutedEventArgs e)
         {
-            MainMenu parentWindow = Window.GetWindow(this) as MainMenu;
-            parentWindow.contentBox.Content = new MainMenuView();
+            try
+            {
+                if (CustomMessageBox.ShowDialog("Czy na pewno chcesz wyjść ?", CustomMessageBox.Buttons.Yes_No) == "1")
+                {
+                    MainMenu parentWindow = Window.GetWindow(this) as MainMenu;
+                    parentWindow.contentBox.Content = new MainMenuView();
+                }
+            }
+            catch (Exception)
+            {
+                CustomMessageBox.ShowDialog("Element nie został zapisany!");
+                throw;
+            }
         }
-
+        private void zapisz_Click(object sender, RoutedEventArgs e)
+        {
+            try  //zapisać
+            {
+                CustomMessageBox.ShowDialog("Element zapisany poprawnie!");
+            }
+            catch (Exception)
+            {
+                CustomMessageBox.ShowDialog("Element nie został zapisany!");
+                throw;
+            }
+        }
         private void ManageBorrows_Loaded(object sender, RoutedEventArgs e)
         {
             MainMenu parentWindow = Window.GetWindow(this) as MainMenu;
