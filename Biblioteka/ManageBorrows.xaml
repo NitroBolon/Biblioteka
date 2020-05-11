@@ -19,7 +19,7 @@
                     </DockPanel>
                 </DockPanel>
                 <DockPanel DockPanel.Dock="Top" Margin="0,0,0,0">
-                    <StackPanel DockPanel.Dock="Right" Margin="20,0,0,0" Width="280" MinWidth="200">
+                    <StackPanel DockPanel.Dock="Right" Margin="20,0,0,0" Width="260" MinWidth="200">
                         <Label>Indeks</Label>
                         <TextBox Style="{StaticResource CustomTextBoxStyle}"></TextBox>
                         <Label>Użytkownik</Label>
@@ -32,16 +32,18 @@
                             <Button Click="wyjdz_Click"  Style="{StaticResource CustomButtonStyle}">Wyjdź</Button>
                         </StackPanel>
                     </StackPanel>
-                    <ListView Margin="10,10,0,0" Width="465" HorizontalAlignment="Left" Style ="{StaticResource CustomListView}">
+                    <ListView Margin="10" Width="460" Style ="{StaticResource CustomListView}">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="Indeks" Width="120" DisplayMemberBinding="{Binding q}" >
+                                <GridViewColumn Header="Indeks" Width="100" DisplayMemberBinding="{Binding q}" >
                                 </GridViewColumn>
                                 <GridViewColumn Header="Użytkownik" Width="180" DisplayMemberBinding="{Binding s}">
                                 </GridViewColumn>
                                 <GridViewColumn Header="Książka" Width="180" DisplayMemberBinding="{Binding e}" >
                                 </GridViewColumn>
+
                             </GridView>
+
                         </ListView.View>
                     </ListView>
                 </DockPanel>
