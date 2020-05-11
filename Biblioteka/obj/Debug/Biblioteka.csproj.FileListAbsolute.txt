@@ -184,3 +184,5 @@ C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\obj\Debug\Biblioteka.csproj.Ge
 C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\obj\Debug\Biblioteka.csproj.CoreCompileInputs.cache
 C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\obj\Debug\Biblioteka.exe
 C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\obj\Debug\Biblioteka.pdb
+C:\Users\Bolo\Desktop\bbt\Biblioteka\Biblioteka\obj\Debug\CustomMessageBoxView.g.cs
+C:\Users\Bolo\Desktop\bbt\Biblioteka\Biblioteka\obj\Debug\CustomMessageBoxView.baml
