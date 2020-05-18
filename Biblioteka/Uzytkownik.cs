@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace Biblioteka
 {
-    class Uzytkownik
+    public class Uzytkownik
     {
-        int indeks { get; set; }
-        String imie { get; set; }
-        String nazwisko { get; set; }
-        int telefon { get; set; }
+        public int indeks { get; set; }
+        public String imie { get; set; }
+        public String nazwisko { get; set; }
+        public int telefon { get; set; }
 
         Uzytkownik()
         {
         }
-        Uzytkownik(int id, String imi, String naz, int tel)
+        public Uzytkownik(int id, String imi, String naz, int tel)
         {
             indeks = id;
             imie = imi;

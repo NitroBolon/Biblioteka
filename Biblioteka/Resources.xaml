@@ -356,5 +356,10 @@
         <Setter Property="FontSize" Value="15" />
         <Setter Property="Background" Value="#B8BBE2" />
   </Style>
-
+    <ControlTemplate x:Key="validationTemplate">
+        <DockPanel>
+            <TextBlock Foreground="Red" FontSize="20">!</TextBlock>
+            <AdornedElementPlaceholder/>
+        </DockPanel>
+    </ControlTemplate>
 </ResourceDictionary>

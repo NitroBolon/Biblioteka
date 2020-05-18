@@ -39,7 +39,7 @@
                     </StackPanel>
                 </StackPanel>
 
-                <ListView x:Name="listView" Margin="10" Style ="{StaticResource CustomListView}">
+                <ListView x:Name="listView" Margin="10" Style ="{StaticResource CustomListView}" ItemsSource="{Binding Path=Lista}">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="Indeks" Width="60" DisplayMemberBinding="{Binding q}" >

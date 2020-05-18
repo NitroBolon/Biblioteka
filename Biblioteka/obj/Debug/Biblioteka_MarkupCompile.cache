@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Kacper\Sztudien\SEM6\BAU WTF\Projekt Biblioteka\Biblioteka\obj\Debug\
+C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\obj\Debug\
 Biblioteka
 none
 false
 DEBUG;TRACE
-D:\Kacper\Sztudien\SEM6\BAU WTF\Projekt Biblioteka\Biblioteka\App.xaml
+C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\App.xaml
 91387358898
 
 17140863757
 14-1290796308
 CustomMessageBoxView.xaml;MainMenu.xaml;MainMenuView.xaml;MainWindow.xaml;ManageBooks.xaml;ManageBorrows.xaml;ManageClients.xaml;ManageFines.xaml;Resources.xaml;
 
-True
+False
 
