@@ -38,7 +38,19 @@
                     </StackPanel>
                 </StackPanel>
 
-                <ListView x:Name="listView" Margin="10" Style ="{StaticResource CustomListView}" Width="441">
+                <ListView x:Name="listView" Margin="10" Style ="{StaticResource CustomListView}" Width="441" SelectionChanged="listView_SelectionChanged">
+                    <ListView.Resources>
+                        <ContextMenu x:Key="ItemContextMenu">
+                            <MenuItem Header="Edytuj" Command="{Binding Path=DataContext.MoreInfo, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ListView}}" Background="WhiteSmoke" Click="Edit" />
+                            <MenuItem Header="Usuń" Command="{Binding Path=DataContext.MoreInfo, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ListView}}" Background="WhiteSmoke" Click="Delete" />
+                        </ContextMenu>
+                    </ListView.Resources>
+
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListViewItem}" >
+                            <Setter Property="ContextMenu" Value="{StaticResource ItemContextMenu}" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="Indeks" Width="80" DisplayMemberBinding="{Binding indeks}" >

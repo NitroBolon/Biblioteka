@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -68,6 +69,22 @@ namespace Biblioteka
                 CustomMessageBox.ShowDialog("Klient nie został zapisany!");
 
             }
+        }
+
+        private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
+
+
+        private void Delete(object sender, RoutedEventArgs e)
+        {
+            Trace.WriteLine("Delete");
+        }
+
+        private void Edit(object sender, RoutedEventArgs e)
+        {
+            Trace.WriteLine("Edit");
         }
     }
 }

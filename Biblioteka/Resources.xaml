@@ -356,10 +356,67 @@
         <Setter Property="FontSize" Value="15" />
         <Setter Property="Background" Value="#B8BBE2" />
   </Style>
-    <ControlTemplate x:Key="validationTemplate">
-        <DockPanel>
-            <TextBlock Foreground="Red" FontSize="20">!</TextBlock>
-            <AdornedElementPlaceholder/>
-        </DockPanel>
-    </ControlTemplate>
+    <Style TargetType="{x:Type Separator}"
+           x:Key="SeparatorStyle">
+        <Setter Property="Height"
+                Value="1" />
+        <Setter Property="Background"
+                Value="#0f3c5a" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Separator}">
+                    <Rectangle Height="{TemplateBinding Height}"
+                               Fill="White" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--Outer menu items-->
+    <Style TargetType="{x:Type MenuItem}">
+        <Setter Property="Background" Value="Red"></Setter>
+        <Setter Property="Foreground" Value="Black"></Setter>
+        <Style.Triggers>
+            <Trigger Property="IsHighlighted"
+                     Value="True">
+                <Setter Property="Background"
+                        Value="Black"></Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- Outer menu -->
+    <Style TargetType="{x:Type ContextMenu}">
+        
+        <Setter Property="OverridesDefaultStyle"
+                Value="True" />
+        <Setter Property="SnapsToDevicePixels"
+                Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ContextMenu}">
+
+                    <!--Here is where you change the border thickness to zero on the menu-->
+                    <Border BorderThickness="0"
+                            x:Name="Border"
+                            Background="Transparent">
+                        <StackPanel ClipToBounds="True"
+                                    Orientation="Vertical"
+                                    IsItemsHost="True" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver"
+                                 Value="true">
+                            <Setter TargetName="Border"
+                                    Property="Background"
+                                    Value="#C8C8DC" />
+                            
+                            
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>
