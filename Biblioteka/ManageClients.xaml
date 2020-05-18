@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Biblioteka.ManageClients"
+<UserControl x:Class="Biblioteka.ManageClients"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Biblioteka"
              mc:Ignorable="d"  Loaded="ManageClients_Loaded"
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Margin="10,10,10,20">
+    <Grid Margin="50,50,50,50">
         <Grid.RowDefinitions>
             <RowDefinition Height="313*"/>
             <RowDefinition Height="37*"/>
@@ -14,45 +14,45 @@
         <DockPanel Grid.RowSpan="2">
             <DockPanel DockPanel.Dock="Top" HorizontalAlignment="Left" Width="690"  Margin="10,0,230,0">
                 <DockPanel DockPanel.Dock="Top">
-                <Label>Filtrowanie</Label>
+                    <Label>Filtrowanie</Label>
                 </DockPanel>
-                    <DockPanel>
+                <DockPanel>
                     <TextBox Style="{StaticResource CustomTextBoxStyle}" Width="210" Height="30" Text="Nazwisko"></TextBox>
                     <TextBox Style="{StaticResource CustomTextBoxStyle}" Width="210" Height="30" Margin="0,0,225,0" Text="Imie"></TextBox>
                 </DockPanel>
-        </DockPanel>
-        <DockPanel DockPanel.Dock="Top" Margin="0,0,0,-15">
-                <StackPanel DockPanel.Dock="Right" Margin="10" MinWidth="200">
+            </DockPanel>
+            <DockPanel DockPanel.Dock="Top" Margin="0,0,0,-15">
+                <StackPanel DockPanel.Dock="Right" Margin="10" MinWidth="180" Width="201">
                     <Label>Indeks</Label>
-                    <TextBox Style="{StaticResource CustomTextBoxStyle}"></TextBox>
+                    <TextBox Style="{StaticResource CustomTextBoxStyle}" Name="indexInput"></TextBox>
                     <Label>Imię</Label>
-                    <TextBox Style="{StaticResource CustomTextBoxStyle}"></TextBox>
+                    <TextBox Style="{StaticResource CustomTextBoxStyle}" Name="nameInput"></TextBox>
                     <Label>Nazwisko</Label>
-                    <TextBox Style="{StaticResource CustomTextBoxStyle}"></TextBox>
+                    <TextBox Style="{StaticResource CustomTextBoxStyle}" Name="surnameInput"></TextBox>
                     <Label>Telefon</Label>
-                    <TextBox Style="{StaticResource CustomTextBoxStyle}"></TextBox>
-                    <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
-                        <Button Margin="10" Style="{StaticResource CustomButtonStyle}" Click="zapisz_Click">Zapisz</Button>
-                        <Button Margin="10"  Style="{StaticResource CustomButtonStyle}">Modyfikuj</Button>
-                        <Button Margin="10" Click="wyjdz_Click" Style="{StaticResource CustomButtonStyle}">Wyjdź</Button>
+                    <TextBox Style="{StaticResource CustomTextBoxStyle}" Name="phoneInput"></TextBox>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="200">
+                        <Button Margin="0,10,10,10" Style="{StaticResource CustomButtonStyle}" Click="zapisz_Click">Zapisz</Button>
+                        <Button Margin="0,10,10,10"  Style="{StaticResource CustomButtonStyle}">Modyfikuj</Button>
+                        <Button Margin="0,10,10,10" Click="wyjdz_Click" Style="{StaticResource CustomButtonStyle}">Wyjdź</Button>
                     </StackPanel>
                 </StackPanel>
 
-                <ListView x:Name="listView" Margin="10" Style ="{StaticResource CustomListView}">
-                  <ListView.View>
-                    <GridView>
-                      <GridViewColumn Header="Indeks" Width="85" DisplayMemberBinding="{Binding q}" >
-                      </GridViewColumn>
-                      <GridViewColumn Header="Imie" Width="120" DisplayMemberBinding="{Binding s}">
-                      </GridViewColumn>
-                      <GridViewColumn Header="Nazwisko" Width="150" DisplayMemberBinding="{Binding e}" >
-                      </GridViewColumn>
-                      <GridViewColumn Header="Telefon" Width="110" DisplayMemberBinding="{Binding a}" >
-                      </GridViewColumn>
+                <ListView x:Name="listView" Margin="10" Style ="{StaticResource CustomListView}" Width="441">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Indeks" Width="80" DisplayMemberBinding="{Binding indeks}" >
+                            </GridViewColumn>
+                            <GridViewColumn Header="Imie" Width="120" DisplayMemberBinding="{Binding imie}">
+                            </GridViewColumn>
+                            <GridViewColumn Header="Nazwisko" Width="140" DisplayMemberBinding="{Binding nazwisko}" >
+                            </GridViewColumn>
+                            <GridViewColumn Header="Telefon" Width="90" DisplayMemberBinding="{Binding telefon}" >
+                            </GridViewColumn>
 
-                    </GridView>
+                        </GridView>
 
-                  </ListView.View>
+                    </ListView.View>
                 </ListView>
             </DockPanel>
         </DockPanel>
