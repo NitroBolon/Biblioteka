@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +25,7 @@ namespace Biblioteka
         public ManageBooks()
         {
             InitializeComponent();
+            MainMenu parentWindow = Window.GetWindow(this) as MainMenu;
         }
 
         private void wyjdz_Click(object sender, RoutedEventArgs e)
@@ -35,19 +38,28 @@ namespace Biblioteka
         {
             MainMenu parentWindow = Window.GetWindow(this) as MainMenu;
             parentWindow.Title = "Bibliotex - Katalog";
+
+            lista.ItemsSource = parentWindow.books;
         }
 
         private void zapisz_Click(object sender, RoutedEventArgs e)
         {
-            try  //zapisać
+            MainMenu parentWindow = Window.GetWindow(this) as MainMenu;
+
+            int ind;
+            bool isConv1 = Int32.TryParse(id.Text, out ind);
+            String tit = title.Text;
+            String auth = author.Text;
+            int yr;
+            bool isConv = Int32.TryParse(year.Text, out yr);
+
+            if (isConv == true && isConv1 == true)
             {
+                parentWindow.books.Add(new Ksiazka(ind, tit, auth, yr));
                 CustomMessageBox.ShowDialog("Książka zapisana poprawnie!");
             }
-            catch (Exception)
-            {
-                CustomMessageBox.ShowDialog("Książka nie została zapisana!");
-                throw;
-            }
+            else CustomMessageBox.ShowDialog("Książka nie została zapisana!");
+
         }
     }
 }

@@ -57,6 +57,7 @@ namespace Biblioteka
         {
             MainMenu parentWindow = Window.GetWindow(this) as MainMenu;
             parentWindow.Title = "Bibliotex - Wypożyczenia";
+            borrowList.ItemsSource = parentWindow.borrows;
         }
 
         private void SUserTextBox_Clearing(object sender, MouseButtonEventArgs e)

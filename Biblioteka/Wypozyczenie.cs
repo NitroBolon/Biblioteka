@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Biblioteka
 {
-    class Wypozyczenie
+    public class Wypozyczenie
     {
-        int indeks { get; set; }
-        Uzytkownik indeks_uzytkownika { get; set; }
-        Ksiazka indeks_ksiazki { get; set; }
+        public int indeks { get; set; }
+        public Uzytkownik indeks_uzytkownika { get; set; }
+        public Ksiazka indeks_ksiazki { get; set; }
 
-        Wypozyczenie() { }
-        Wypozyczenie(int id, Uzytkownik id_u, Ksiazka id_k)
+        public Wypozyczenie() { }
+        public Wypozyczenie(int id, Uzytkownik id_u, Ksiazka id_k)
         {
             indeks = id;
             indeks_uzytkownika = id_u;

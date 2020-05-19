@@ -186,3 +186,9 @@ C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\obj\Debug\Biblioteka.exe
 C:\Users\Maciek\source\repos\Bibliotex\Biblioteka\obj\Debug\Biblioteka.pdb
 C:\Users\Bolo\Desktop\bbt\Biblioteka\Biblioteka\obj\Debug\CustomMessageBoxView.g.cs
 C:\Users\Bolo\Desktop\bbt\Biblioteka\Biblioteka\obj\Debug\CustomMessageBoxView.baml
+C:\Users\Bolo\Desktop\bbt\Biblioteka\Biblioteka\bin\Debug\EntityFramework.dll
+C:\Users\Bolo\Desktop\bbt\Biblioteka\Biblioteka\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Bolo\Desktop\bbt\Biblioteka\Biblioteka\bin\Debug\EntityFramework.xml
+C:\Users\Bolo\Desktop\bbt\Biblioteka\Biblioteka\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Bolo\Desktop\bbt\Biblioteka\Biblioteka\obj\Debug\Biblioteka.csproj.CopyComplete
+C:\Users\Bolo\Desktop\bbt\Biblioteka\Biblioteka\obj\Debug\Biblioteka.csproj.CoreCompileInputs.cache

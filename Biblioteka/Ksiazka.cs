@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Biblioteka
 {
-    class Ksiazka
+    public class Ksiazka
     {
-        int indeks { get; set; }
-        String tytul { get; set; }
-        String autor { get; set; }
-        int rok_wydania { get; set; }
+        public int indeks { get; set; }
+        public String tytul { get; set; }
+        public String autor { get; set; }
+        public int rok_wydania { get; set; }
 
-        Ksiazka() { }
+        public Ksiazka() { }
 
-        Ksiazka(int id, String tit, String aut, int rok) 
+        public Ksiazka(int id, String tit, String aut, int rok) 
         {
             indeks = id;
             tytul = tit;

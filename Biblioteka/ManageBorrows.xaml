@@ -32,18 +32,16 @@
                             <Button Click="wyjdz_Click"  Style="{StaticResource CustomButtonStyle}">Wyjdź</Button>
                         </StackPanel>
                     </StackPanel>
-                    <ListView Margin="10" Width="460" Style ="{StaticResource CustomListView}">
+                    <ListView Margin="10" Width="460" x:Name="borrowList" Style ="{StaticResource CustomListView}">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="Indeks" Width="100" DisplayMemberBinding="{Binding q}" >
+                                <GridViewColumn Header="Indeks" Width="100" DisplayMemberBinding="{Binding indeks}" >
                                 </GridViewColumn>
-                                <GridViewColumn Header="Użytkownik" Width="180" DisplayMemberBinding="{Binding s}">
+                                <GridViewColumn Header="Użytkownik" Width="180" DisplayMemberBinding="{Binding indeks_uzytkownika.indeks}">
                                 </GridViewColumn>
-                                <GridViewColumn Header="Książka" Width="180" DisplayMemberBinding="{Binding e}" >
+                                <GridViewColumn Header="Książka" Width="180" DisplayMemberBinding="{Binding indeks_ksiazki.indeks}" >
                                 </GridViewColumn>
-
                             </GridView>
-
                         </ListView.View>
                     </ListView>
                 </DockPanel>

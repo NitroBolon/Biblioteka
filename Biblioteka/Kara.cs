@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace Biblioteka
 {
-    class Kara
+    public class Kara
     {
-        Wypozyczenie wypozyczenie { get; set; }
-        DateTime data_wypozyczenia { get; set; }
-        DateTime data_zwrotu { get; set; }
-        float kara { get; set; }
+        public Wypozyczenie wypozyczenie { get; set; }
+        public DateTime data_wypozyczenia { get; set; }
+        public DateTime data_zwrotu { get; set; }
+        public double kara { get; set; }
 
-        Kara() { }
-        Kara(Wypozyczenie wyp, DateTime d_wyp, DateTime d_zwr, float kar) 
+        public Kara() { }
+        public Kara(Wypozyczenie wyp, DateTime d_wyp, DateTime d_zwr, double kar) 
         {
             wypozyczenie = wyp;
             data_wypozyczenia = d_wyp;
