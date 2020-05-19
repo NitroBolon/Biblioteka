@@ -47,6 +47,7 @@ namespace Biblioteka
         {
             MainMenu parentWindow = Window.GetWindow(this) as MainMenu;
             parentWindow.Title = "Bibliotex - Kary";
+            listView.ItemsSource = parentWindow.fines;
         }
 
         private void zapisz_Click(object sender, RoutedEventArgs e)

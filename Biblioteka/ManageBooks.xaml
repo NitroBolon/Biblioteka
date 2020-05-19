@@ -23,39 +23,56 @@
               </DockPanel>
             </DockPanel>
           <DockPanel DockPanel.Dock="Top" Margin="0,0,0,-15">
-                <StackPanel DockPanel.Dock="Right" Margin="10" MinWidth="200">
-                    <Label>Indeks</Label>
-                    <TextBox Style="{StaticResource CustomTextBoxStyle}"></TextBox>
-                    <Label>Tytuł</Label>
-                    <TextBox Style="{StaticResource CustomTextBoxStyle}"></TextBox>
-                    <Label>Autor</Label>
-                    <TextBox Style="{StaticResource CustomTextBoxStyle}"></TextBox>
-                    <Label>Rok wydania</Label>
-                    <TextBox Style="{StaticResource CustomTextBoxStyle}"></TextBox>
-                    <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
-                        <Button Margin="10"  Style="{StaticResource CustomButtonStyle}" Click="zapisz_Click">Zapisz</Button>
+                    <StackPanel DockPanel.Dock="Right" Margin="10" MinWidth="200">
+                        <Label>Indeks</Label>
+                        <TextBox Style="{StaticResource CustomTextBoxStyle}" x:Name="id"></TextBox>
+                        <Label>Tytuł</Label>
+                        <TextBox Style="{StaticResource CustomTextBoxStyle}" x:Name="title"></TextBox>
+                        <Label>Autor</Label>
+                        <TextBox Style="{StaticResource CustomTextBoxStyle}" x:Name="author"></TextBox>
+                        <Label>Rok wydania</Label>
+                        <TextBox Style="{StaticResource CustomTextBoxStyle}" x:Name="year"></TextBox>
+                        <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
+                            <Button Margin="10"  Style="{StaticResource CustomButtonStyle}" Click="zapisz_Click">Zapisz</Button>
                             <Button Margin="10"  Style="{StaticResource CustomButtonStyle}">Modyfikuj</Button>
                             <Button Margin="10" Click="wyjdz_Click"  Style="{StaticResource CustomButtonStyle}">Wyjdź</Button>
+                        </StackPanel>
                     </StackPanel>
-                </StackPanel>
-                <ListView Margin="10" Style ="{StaticResource CustomListView}">
-                  <ListView.View>
-                    <GridView>
-                      <GridViewColumn Header="Indeks" Width="80" DisplayMemberBinding="{Binding q}" >
-                      </GridViewColumn>
-                      <GridViewColumn Header="Autor" Width="130" DisplayMemberBinding="{Binding s}">
-                      </GridViewColumn>
-                      <GridViewColumn Header="Tytuł" Width="160" DisplayMemberBinding="{Binding e}" >
-                      </GridViewColumn>
-                      <GridViewColumn Header="Rok wydania" Width="100" DisplayMemberBinding="{Binding a}" >
-                      </GridViewColumn>
-
-                    </GridView>
-
-                  </ListView.View>
-                </ListView>
-
-            </DockPanel>
+                    <ListView x:Name="lista" Margin="10" Style="{StaticResource CustomListView}">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Indeks" Width="80" >
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding indeks}" />
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Autor" Width="130">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding autor}" />
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Tytuł" Width="160">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding tytul}" />
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Rok wydania" Width="100">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding rok_wydania}" />
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </DockPanel>
           </DockPanel>
         </Grid>
     </Grid>

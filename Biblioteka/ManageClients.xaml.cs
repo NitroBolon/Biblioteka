@@ -21,13 +21,9 @@ namespace Biblioteka
     /// </summary>
     public partial class ManageClients : UserControl
     {
-        ObservableCollection<Uzytkownik> list = new ObservableCollection<Uzytkownik>();
         public ManageClients()
         {
             InitializeComponent();
-            Uzytkownik u = new Uzytkownik(104085,"Kacper","Makarewicz",123456789);
-            list.Add(u);
-            listView.ItemsSource = list;
         }
 
         private void wyjdz_Click(object sender, RoutedEventArgs e)
@@ -40,12 +36,14 @@ namespace Biblioteka
         {
             MainMenu parentWindow = Window.GetWindow(this) as MainMenu;
             parentWindow.Title = "Bibliotex - Klienci";
+            listView.ItemsSource = parentWindow.clients;
         }
 
         private void zapisz_Click(object sender, RoutedEventArgs e)
         {
             try  //zapisać
             {
+                MainMenu parentWindow = Window.GetWindow(this) as MainMenu;
                 TextBox ind = (TextBox)indexInput;
                 TextBox name = (TextBox)nameInput;
                 TextBox surname = (TextBox)surnameInput;
@@ -57,7 +55,7 @@ namespace Biblioteka
                 else
                 {
                     Uzytkownik user = new Uzytkownik(Int32.Parse(ind.Text), name.Text, surname.Text, Int32.Parse(phone.Text));
-                    list.Add(user);
+                    parentWindow.clients.Add(user);
                     CustomMessageBox.ShowDialog("Klient został zapisany poprawnie!");
                 }
                 

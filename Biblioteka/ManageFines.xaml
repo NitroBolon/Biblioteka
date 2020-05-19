@@ -42,13 +42,13 @@
                 <ListView x:Name="listView" Margin="10" Style ="{StaticResource CustomListView}">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Header="Indeks" Width="60" DisplayMemberBinding="{Binding q}" >
+                            <GridViewColumn Header="Indeks" Width="60" DisplayMemberBinding="{Binding wypozyczenie}" >
                             </GridViewColumn>
-                            <GridViewColumn Header="Użytkownik" Width="170" DisplayMemberBinding="{Binding s}">
+                            <GridViewColumn Header="Użytkownik" Width="170" DisplayMemberBinding="{Binding wypozyczenie.indeks_uzytkownika}">
                             </GridViewColumn>
-                            <GridViewColumn Header="Książka" Width="180" DisplayMemberBinding="{Binding e}" >
+                            <GridViewColumn Header="Książka" Width="180" DisplayMemberBinding="{Binding wypozyczenie.indeks_ksiazki}" >
                             </GridViewColumn>
-                            <GridViewColumn Header="Kara" Width="60" DisplayMemberBinding="{Binding a}" >
+                            <GridViewColumn Header="Kara" Width="60" DisplayMemberBinding="{Binding kara}" >
                             </GridViewColumn>
                         </GridView>
                     </ListView.View>
