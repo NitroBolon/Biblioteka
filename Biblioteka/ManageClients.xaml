@@ -32,9 +32,9 @@
                     <Label>Telefon</Label>
                     <TextBox Style="{StaticResource CustomTextBoxStyle}" Name="phoneInput"></TextBox>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="200">
-                        <Button Margin="0,10,10,10" Style="{StaticResource CustomButtonStyle}" Click="zapisz_Click">Zapisz</Button>
-                        <Button Margin="0,10,10,10"  Style="{StaticResource CustomButtonStyle}">Modyfikuj</Button>
-                        <Button Margin="0,10,10,10" Click="wyjdz_Click" Style="{StaticResource CustomButtonStyle}">Wyjdź</Button>
+                        <Button Margin="0,10,10,10" Style="{StaticResource CustomButtonStyle}" Click="save_Client" Name="saveButton">Zapisz</Button>
+                        <Button Margin="0,10,10,10"  Style="{StaticResource CustomButtonStyle}"  Name="editButton" Click="edit_Client" IsEnabled="False" >Modyfikuj</Button>
+                        <Button Margin="0,10,10,10" Click="wyjdz_Click" Style="{StaticResource CustomButtonStyle}"  Name="exitButton" >Wyjdź</Button>
                     </StackPanel>
                 </StackPanel>
 

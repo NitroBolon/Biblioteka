@@ -25,20 +25,32 @@
           <DockPanel DockPanel.Dock="Top" Margin="0,0,0,-15">
                     <StackPanel DockPanel.Dock="Right" Margin="10" MinWidth="200">
                         <Label>Indeks</Label>
-                        <TextBox Style="{StaticResource CustomTextBoxStyle}" x:Name="id"></TextBox>
+                        <TextBox Style="{StaticResource CustomTextBoxStyle}" x:Name="idInput"></TextBox>
                         <Label>Tytuł</Label>
-                        <TextBox Style="{StaticResource CustomTextBoxStyle}" x:Name="title"></TextBox>
+                        <TextBox Style="{StaticResource CustomTextBoxStyle}" x:Name="titleInput"></TextBox>
                         <Label>Autor</Label>
-                        <TextBox Style="{StaticResource CustomTextBoxStyle}" x:Name="author"></TextBox>
+                        <TextBox Style="{StaticResource CustomTextBoxStyle}" x:Name="authorInput"></TextBox>
                         <Label>Rok wydania</Label>
-                        <TextBox Style="{StaticResource CustomTextBoxStyle}" x:Name="year"></TextBox>
+                        <TextBox Style="{StaticResource CustomTextBoxStyle}" x:Name="yearInput"></TextBox>
                         <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
-                            <Button Margin="10"  Style="{StaticResource CustomButtonStyle}" Click="zapisz_Click">Zapisz</Button>
-                            <Button Margin="10"  Style="{StaticResource CustomButtonStyle}">Modyfikuj</Button>
-                            <Button Margin="10" Click="wyjdz_Click"  Style="{StaticResource CustomButtonStyle}">Wyjdź</Button>
+                            <Button Margin="10"  Style="{StaticResource CustomButtonStyle}" Click="save_Book" Name="saveButton">Zapisz</Button>
+                            <Button Margin="10"  Style="{StaticResource CustomButtonStyle}"  Name="editButton" Click="edit_Book" IsEnabled="False">Modyfikuj</Button>
+                            <Button Margin="10" Click="wyjdz_Click"  Style="{StaticResource CustomButtonStyle}" Name="exitButton">Wyjdź</Button>
                         </StackPanel>
                     </StackPanel>
-                    <ListView x:Name="lista" Margin="10" Style="{StaticResource CustomListView}">
+                    <ListView x:Name="listView" Margin="10" Style="{StaticResource CustomListView}" SelectionChanged="listView_SelectionChanged" >
+                        <ListView.Resources>
+                            <ContextMenu x:Key="ItemContextMenu">
+                                <MenuItem Header="Edytuj" Command="{Binding Path=DataContext.MoreInfo, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ListView}}" Background="WhiteSmoke" Click="Edit" />
+                                <MenuItem Header="Usuń" Command="{Binding Path=DataContext.MoreInfo, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ListView}}" Background="WhiteSmoke" Click="Delete" />
+                            </ContextMenu>
+                        </ListView.Resources>
+
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="{x:Type ListViewItem}" >
+                                <Setter Property="ContextMenu" Value="{StaticResource ItemContextMenu}" />
+                            </Style>
+                        </ListView.ItemContainerStyle>
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Indeks" Width="80" >

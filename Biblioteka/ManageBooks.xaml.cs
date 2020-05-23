@@ -22,6 +22,8 @@ namespace Biblioteka
     /// </summary>
     public partial class ManageBooks : UserControl
     {
+        public Ksiazka book;
+        public int index;
         public ManageBooks()
         {
             InitializeComponent();
@@ -39,27 +41,89 @@ namespace Biblioteka
             MainMenu parentWindow = Window.GetWindow(this) as MainMenu;
             parentWindow.Title = "Bibliotex - Katalog";
 
-            lista.ItemsSource = parentWindow.books;
+            listView.ItemsSource = parentWindow.books;
         }
-
-        private void zapisz_Click(object sender, RoutedEventArgs e)
+        public void clearInputs()
+        {
+            idInput.Text = "";
+            authorInput.Text = "";
+            yearInput.Text = "";
+            titleInput.Text = "";
+        }
+        private void save_Book(object sender, RoutedEventArgs e)
         {
             MainMenu parentWindow = Window.GetWindow(this) as MainMenu;
 
             int ind;
-            bool isConv1 = Int32.TryParse(id.Text, out ind);
-            String tit = title.Text;
-            String auth = author.Text;
+            bool isConv1 = Int32.TryParse(idInput.Text, out ind);
+            String tit = titleInput.Text;
+            String auth = authorInput.Text;
             int yr;
-            bool isConv = Int32.TryParse(year.Text, out yr);
+            bool isConv = Int32.TryParse(yearInput.Text, out yr);
 
             if (isConv == true && isConv1 == true)
             {
                 parentWindow.books.Add(new Ksiazka(ind, tit, auth, yr));
+                clearInputs();
                 CustomMessageBox.ShowDialog("Książka zapisana poprawnie!");
             }
             else CustomMessageBox.ShowDialog("Książka nie została zapisana!");
 
+        }
+
+        private void Edit(object sender, RoutedEventArgs e)
+        {
+            editButton.IsEnabled = true;
+            saveButton.IsEnabled = false;
+            idInput.Text = book.indeks.ToString();
+            authorInput.Text = book.autor;
+            yearInput.Text = book.rok_wydania.ToString();
+            titleInput.Text = book.tytul;
+        }
+
+        private void Delete(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (CustomMessageBox.ShowDialog("Czy na pewno chcesz skasowac książkę " + book.tytul + "?", CustomMessageBox.Buttons.Yes_No) == "1")
+                {
+                    MainMenu parentWindow = Window.GetWindow(this) as MainMenu;
+                    parentWindow.books.RemoveAt(index);
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void edit_Book(object sender, RoutedEventArgs e)
+        {
+            MainMenu parentWindow = Window.GetWindow(this) as MainMenu;
+            int ind;
+            bool isConv1 = Int32.TryParse(idInput.Text, out ind);
+            String tit = titleInput.Text;
+            String auth = authorInput.Text;
+            int yr;
+            bool isConv = Int32.TryParse(yearInput.Text, out yr);
+
+            if (isConv == true && isConv1 == true)
+            {
+                Ksiazka tmpBook = new Ksiazka(ind,tit,auth,yr);
+                parentWindow.books[index] = tmpBook;
+                saveButton.IsEnabled = true;
+                editButton.IsEnabled = false;
+                clearInputs();
+                CustomMessageBox.ShowDialog("Książka zedytowana poprawnie!");
+            }
+            else CustomMessageBox.ShowDialog("Książka nie została zedytowana!");
+
+        }
+
+        private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            book = (Ksiazka)listView.SelectedItem;
+            index = (int)listView.SelectedIndex;
         }
     }
 }
