@@ -35,7 +35,7 @@ namespace Biblioteka
             while ((line = file.ReadLine()) != null)
             {
                 tmp = line.Split('_');
-                books.Add(new Ksiazka(Convert.ToInt32(tmp[0]), tmp[1],tmp[2], Convert.ToInt32(tmp[3])));
+                books.Add(new Ksiazka(Convert.ToInt32(tmp[0]), tmp[1], tmp[2], Convert.ToInt32(tmp[3])));
             }
             file.Close();
 
@@ -47,8 +47,8 @@ namespace Biblioteka
             }
             file.Close();
 
-            Uzytkownik x=new Uzytkownik();
-            Ksiazka y=new Ksiazka();
+            Uzytkownik x = new Uzytkownik();
+            Ksiazka y = new Ksiazka();
             file = new System.IO.StreamReader("../../data/wypozyczenia.txt");
             while ((line = file.ReadLine()) != null)
             {
@@ -62,7 +62,7 @@ namespace Biblioteka
             }
             file.Close();
 
-            /*Wypozyczenie z=new Wypozyczenie();
+            Wypozyczenie z = new Wypozyczenie();
             file = new System.IO.StreamReader("../../data/kary.txt");
             while ((line = file.ReadLine()) != null)
             {
@@ -70,9 +70,9 @@ namespace Biblioteka
                 for (int i = 0; i < borrows.Count; i++)
                     if (borrows[i].indeks == Convert.ToInt32(tmp[0])) z = borrows[i];
 
-                 fines.Add(new Kara(z, Convert.ToDateTime(tmp[1]), Convert.ToDateTime(tmp[2]), Convert.ToDouble(tmp[3])));
+                fines.Add(new Kara(z, Convert.ToDateTime(tmp[1]), Convert.ToDateTime(tmp[2]), Convert.ToDouble(tmp[3])));
             }
-            file.Close();*/
+            file.Close();
 
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             this.contentBox.Content = new MainMenuView();
@@ -81,25 +81,25 @@ namespace Biblioteka
         private void MainMenu_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             //obsluga zapisania zmian do pliku itepe itede
-            System.IO.StreamWriter file2 = new System.IO.StreamWriter("ksiazki.txt");
-            for(int i=0; i<books.Count; i++)
-                file2.WriteLine(books[i].indeks+ "_" + books[i].tytul + "_" + books[i].autor + "_" + books[i].rok_wydania);
+            System.IO.StreamWriter file2 = new System.IO.StreamWriter("../../data/ksiazki.txt");
+            for (int i = 0; i < books.Count; i++)
+                file2.WriteLine(books[i].indeks + "_" + books[i].tytul + "_" + books[i].autor + "_" + books[i].rok_wydania);
             file2.Close();
 
-            file2 = new System.IO.StreamWriter("klienci.txt");
+            file2 = new System.IO.StreamWriter("../../data/klienci.txt");
             for (int i = 0; i < clients.Count; i++)
                 file2.WriteLine(clients[i].indeks + "_" + clients[i].imie + "_" + clients[i].nazwisko + "_" + clients[i].telefon);
             file2.Close();
 
-            file2 = new System.IO.StreamWriter("wypozyczenia.txt");
+            file2 = new System.IO.StreamWriter("../../data/wypozyczenia.txt");
             for (int i = 0; i < borrows.Count; i++)
                 file2.WriteLine(borrows[i].indeks + "_" + borrows[i].indeks_uzytkownika.indeks + "_" + borrows[i].indeks_ksiazki.indeks);
             file2.Close();
 
-            /*file2 = new System.IO.StreamWriter("kary.txt");
-            for (int i = 0; i < fines.Count; i++)
-                file2.WriteLine(fines[i].wypozyczenie.indeks + "_" + fines[i].data_wypozyczenia + "_" + fines[i].data_zwrotu + "_" + fines[i].kara);
-            file2.Close();*/
+            file2 = new System.IO.StreamWriter("../../data/test.txt");
+            for (int i = 0; i < borrows.Count; i++)
+                file2.WriteLine(fines[i].wypozyczenie.indeks + "_" + fines[i].data_wypozyczenia + "_" + fines[i].data_zwrotu);
+            file2.Close();
         }
     }
 }

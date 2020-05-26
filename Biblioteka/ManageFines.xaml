@@ -19,20 +19,20 @@
             </DockPanel>
             <DockPanel DockPanel.Dock="Top">
                 <StackPanel DockPanel.Dock="Right" Margin="10" MinWidth="250">
-                    <Label>Indeks</Label>
-                    <TextBox Style="{StaticResource CustomTextBoxStyle}" Margin="5 0 5 0"></TextBox>
                     <Label>Wypożyczenie</Label>
-                    <ComboBox  Margin="5 0 5 0" Style="{StaticResource ComboBoxStyle}">
-                        <ComboBoxItem>i1</ComboBoxItem>
-                        <ComboBoxItem>i2</ComboBoxItem>
-                        <ComboBoxItem>i3</ComboBoxItem>
+                    <ComboBox x:Name="wypozyczenie" DisplayMemberPath="{Binding indeks}"  Margin="5 0 5 0" Style="{StaticResource ComboBoxStyle}">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding indeks}"/>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
                     </ComboBox>
                     <Label>Data wypożyczenia</Label>
-                    <DatePicker Margin="5 0 5 0"></DatePicker>
+                    <DatePicker x:Name="d_wyp" Margin="5 0 5 0"></DatePicker>
                     <Label>Data zwrotu</Label>
-                    <DatePicker Margin="5 0 5 0"></DatePicker>
+                    <DatePicker x:Name="d_zwr" Margin="5 0 5 0"></DatePicker>
                     <Label>Kara</Label>
-                    <TextBox Style="{StaticResource CustomTextBoxStyle}" Margin="5 0 5 0"></TextBox>
+                    <TextBox x:Name="kara" Style="{StaticResource CustomTextBoxStyle}" Margin="5 0 5 0"></TextBox>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <Button x:Name="zapisz" Margin="10"  Style="{StaticResource CustomButtonStyle}" Click="zapisz_Click">Zapisz</Button>
                         <Button x:Name="wyjdz" Margin="10" Click="wyjdz_Click" Style="{StaticResource CustomButtonStyle}">Wyjdź</Button>
@@ -42,11 +42,11 @@
                 <ListView x:Name="listView" Margin="10" Style ="{StaticResource CustomListView}">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Header="Indeks" Width="60" DisplayMemberBinding="{Binding wypozyczenie}" >
+                            <GridViewColumn Header="Indeks" Width="60" DisplayMemberBinding="{Binding wypozyczenie.indeks}" >
                             </GridViewColumn>
-                            <GridViewColumn Header="Użytkownik" Width="170" DisplayMemberBinding="{Binding wypozyczenie.indeks_uzytkownika}">
+                            <GridViewColumn Header="Użytkownik" Width="170" DisplayMemberBinding="{Binding wypozyczenie.indeks_uzytkownika.imie}">
                             </GridViewColumn>
-                            <GridViewColumn Header="Książka" Width="180" DisplayMemberBinding="{Binding wypozyczenie.indeks_ksiazki}" >
+                            <GridViewColumn Header="Książka" Width="180" DisplayMemberBinding="{Binding wypozyczenie.indeks_ksiazki.tytul}" >
                             </GridViewColumn>
                             <GridViewColumn Header="Kara" Width="60" DisplayMemberBinding="{Binding kara}" >
                             </GridViewColumn>

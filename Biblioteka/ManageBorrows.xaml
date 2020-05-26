@@ -14,32 +14,58 @@
                         <Label>Filtrowanie</Label>
                     </DockPanel>
                     <DockPanel>
-                        <TextBox x:Name="search_user" Style="{StaticResource CustomTextBoxStyle}" Width="220" Height="30" Text="Użytkownik" MouseDoubleClick="SUserTextBox_Clearing"></TextBox>
-                        <TextBox x:Name="search_book" Style="{StaticResource CustomTextBoxStyle}" Width="220" Height="30" Text="Książka" Margin="10,0,0,0" MouseDoubleClick="SBookTextBox_Clearing"></TextBox>
+                        <TextBox x:Name="search_user" Style="{StaticResource CustomTextBoxStyle}" Width="220" Height="30" Text="Użytkownik" ></TextBox>
+                        <TextBox x:Name="search_book" Style="{StaticResource CustomTextBoxStyle}" Width="220" Height="30" Text="Książka" Margin="10,0,0,0"></TextBox>
                     </DockPanel>
                 </DockPanel>
                 <DockPanel DockPanel.Dock="Top" Margin="0,0,0,0">
                     <StackPanel DockPanel.Dock="Right" Margin="20,0,0,0" Width="260" MinWidth="200">
                         <Label>Indeks</Label>
-                        <TextBox Style="{StaticResource CustomTextBoxStyle}"></TextBox>
+                        <TextBox x:Name="index" Style="{StaticResource CustomTextBoxStyle}"></TextBox>
                         <Label>Użytkownik</Label>
-                        <ComboBox Style="{StaticResource ComboBoxStyle}"></ComboBox>
+                        <ComboBox x:Name="user" Style="{StaticResource ComboBoxStyle}" DisplayMemberPath="{Binding indeks}">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding indeks}"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+
+                        </ComboBox>
                         <Label>Książka</Label>
-                        <ComboBox Style="{StaticResource ComboBoxStyle}"></ComboBox>
+                        <ComboBox x:Name="book" Style="{StaticResource ComboBoxStyle}" DisplayMemberPath="{Binding indeks}">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding indeks}"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+
+                        </ComboBox>
                         <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
-                            <Button Margin="0,0,10,0" Click="zapisz_Click" Style="{StaticResource CustomButtonStyle}">Dodaj nowy</Button>
-                            <Button Margin="0,0,10,0" Click="zapisz_Click" Style="{StaticResource CustomButtonStyle}">Modyfikuj</Button>
-                            <Button Click="wyjdz_Click"  Style="{StaticResource CustomButtonStyle}">Wyjdź</Button>
+                            <Button x:Name="add" Margin="0,0,10,0" Click="save_Borrow" Style="{StaticResource CustomButtonStyle}">Dodaj nowy</Button>
+                            <Button x:Name="mod" Margin="0,0,10,0" Click="edit_Client" Style="{StaticResource CustomButtonStyle}">Modyfikuj</Button>
+                            <Button x:Name="del" Click="wyjdz_Click"  Style="{StaticResource CustomButtonStyle}">Wyjdź</Button>
                         </StackPanel>
                     </StackPanel>
                     <ListView Margin="10" Width="460" x:Name="borrowList" Style ="{StaticResource CustomListView}">
+                        <ListView.Resources>
+                            <ContextMenu x:Key="ItemContextMenu">
+                                <MenuItem Header="Edytuj" Command="{Binding Path=DataContext.MoreInfo, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ListView}}" Background="WhiteSmoke" Click="Edit" />
+                                <MenuItem Header="Usuń" Command="{Binding Path=DataContext.MoreInfo, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ListView}}" Background="WhiteSmoke" Click="Delete" />
+                            </ContextMenu>
+                        </ListView.Resources>
+
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="{x:Type ListViewItem}" >
+                                <Setter Property="ContextMenu" Value="{StaticResource ItemContextMenu}" />
+                            </Style>
+                        </ListView.ItemContainerStyle>
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Indeks" Width="100" DisplayMemberBinding="{Binding indeks}" >
                                 </GridViewColumn>
-                                <GridViewColumn Header="Użytkownik" Width="180" DisplayMemberBinding="{Binding indeks_uzytkownika.indeks}">
+                                <GridViewColumn Header="Użytkownik" Width="180" DisplayMemberBinding="{Binding indeks_uzytkownika.imie}">
                                 </GridViewColumn>
-                                <GridViewColumn Header="Książka" Width="180" DisplayMemberBinding="{Binding indeks_ksiazki.indeks}" >
+                                <GridViewColumn Header="Książka" Width="180" DisplayMemberBinding="{Binding indeks_ksiazki.tytul}" >
                                 </GridViewColumn>
                             </GridView>
                         </ListView.View>
