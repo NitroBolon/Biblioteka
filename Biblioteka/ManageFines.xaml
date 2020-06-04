@@ -13,47 +13,66 @@
                     <Label>Filtrowanie</Label>
                 </DockPanel>
                 <DockPanel>
-                    <TextBox Style="{StaticResource CustomTextBoxStyle}" Width="210" Height="30" Text="Nazwisko"></TextBox>
-                    <TextBox Style="{StaticResource CustomTextBoxStyle}" Width="210" Height="30" Margin="20,0,0,0" Text="Imie"></TextBox>
+                    <TextBox x:Name="indexFilter" Style="{StaticResource CustomTextBoxStyle}" Width="210" Height="30" TextChanged="indexFilter_TextChanged"></TextBox>
                 </DockPanel>
             </DockPanel>
             <DockPanel DockPanel.Dock="Top">
                 <StackPanel DockPanel.Dock="Right" Margin="10" MinWidth="250">
-                    <Label>Indeks</Label>
-                    <TextBox Style="{StaticResource CustomTextBoxStyle}" Margin="5 0 5 0"></TextBox>
                     <Label>Wypożyczenie</Label>
-                    <ComboBox  Margin="5 0 5 0" Style="{StaticResource ComboBoxStyle}">
-                        <ComboBoxItem>i1</ComboBoxItem>
-                        <ComboBoxItem>i2</ComboBoxItem>
-                        <ComboBoxItem>i3</ComboBoxItem>
+                    <ComboBox x:Name="borrowComboBox"  Margin="5 0 5 0" Style="{StaticResource ComboBoxStyle}">
                     </ComboBox>
                     <Label>Data wypożyczenia</Label>
-                    <DatePicker Margin="5 0 5 0"></DatePicker>
+                    <DatePicker Name="borrowDatePicker" Margin="5 0 5 0"></DatePicker>
                     <Label>Data zwrotu</Label>
-                    <DatePicker Margin="5 0 5 0"></DatePicker>
+                    <DatePicker Name="returnDatePicker" Margin="5 0 5 0"></DatePicker>
                     <Label>Kara</Label>
-                    <TextBox Style="{StaticResource CustomTextBoxStyle}" Margin="5 0 5 0"></TextBox>
+                    <TextBox x:Name="fineTextBox" Style="{StaticResource CustomTextBoxStyle}" Margin="5 0 5 0"></TextBox>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <Button x:Name="zapisz" Margin="10"  Style="{StaticResource CustomButtonStyle}" Click="zapisz_Click">Zapisz</Button>
                         <Button x:Name="wyjdz" Margin="10" Click="wyjdz_Click" Style="{StaticResource CustomButtonStyle}">Wyjdź</Button>
                     </StackPanel>
                 </StackPanel>
 
-                <ListView x:Name="listView" Margin="10" Style ="{StaticResource CustomListView}">
+                <ListView x:Name="listView" Margin="10" Style ="{StaticResource CustomListView}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="listView_SelectionChanged">
+
+                    <ListView.Resources>
+                        <ContextMenu x:Key="ItemContextMenu">
+                            <MenuItem Header="Usuń" Command="{Binding Path=DataContext.MoreInfo, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ListView}}" Background="WhiteSmoke" Click="Delete" />
+                        </ContextMenu>
+                    </ListView.Resources>
+
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListViewItem}" >
+                            <Setter Property="ContextMenu" Value="{StaticResource ItemContextMenu}" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Header="Indeks" Width="60" DisplayMemberBinding="{Binding wypozyczenie}" >
+                            <GridViewColumn Header="Indeks" Width="60" DisplayMemberBinding="{Binding wypozyczenie.indeks}" >
                             </GridViewColumn>
-                            <GridViewColumn Header="Użytkownik" Width="170" DisplayMemberBinding="{Binding wypozyczenie.indeks_uzytkownika}">
+                            <GridViewColumn Header="Użytkownik" Width="170">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock>
+                                            <TextBlock.Text>
+                                                <MultiBinding StringFormat="{}{0} {1}">
+                                                    <Binding Path="wypozyczenie.indeks_uzytkownika.imie"/>
+                                                    <Binding Path="wypozyczenie.indeks_uzytkownika.nazwisko"/>
+                                                </MultiBinding>
+                                            </TextBlock.Text>
+                                        </TextBlock>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
                             </GridViewColumn>
-                            <GridViewColumn Header="Książka" Width="180" DisplayMemberBinding="{Binding wypozyczenie.indeks_ksiazki}" >
+                            <GridViewColumn Header="Książka" Width="180" DisplayMemberBinding="{Binding wypozyczenie.indeks_ksiazki.tytul}" >
                             </GridViewColumn>
                             <GridViewColumn Header="Kara" Width="60" DisplayMemberBinding="{Binding kara}" >
                             </GridViewColumn>
                         </GridView>
                     </ListView.View>
                 </ListView>
-
+                
             </DockPanel>
         </DockPanel>
     </Grid>

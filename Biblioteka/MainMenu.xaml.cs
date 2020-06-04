@@ -62,7 +62,7 @@ namespace Biblioteka
             }
             file.Close();
 
-            /*Wypozyczenie z=new Wypozyczenie();
+            Wypozyczenie z=new Wypozyczenie();
             file = new System.IO.StreamReader("../../data/kary.txt");
             while ((line = file.ReadLine()) != null)
             {
@@ -72,7 +72,7 @@ namespace Biblioteka
 
                  fines.Add(new Kara(z, Convert.ToDateTime(tmp[1]), Convert.ToDateTime(tmp[2]), Convert.ToDouble(tmp[3])));
             }
-            file.Close();*/
+            file.Close();
 
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             this.contentBox.Content = new MainMenuView();
@@ -96,10 +96,10 @@ namespace Biblioteka
                 file2.WriteLine(borrows[i].indeks + "_" + borrows[i].indeks_uzytkownika.indeks + "_" + borrows[i].indeks_ksiazki.indeks);
             file2.Close();
 
-            /*file2 = new System.IO.StreamWriter("kary.txt");
+            file2 = new System.IO.StreamWriter("kary.txt");
             for (int i = 0; i < fines.Count; i++)
                 file2.WriteLine(fines[i].wypozyczenie.indeks + "_" + fines[i].data_wypozyczenia + "_" + fines[i].data_zwrotu + "_" + fines[i].kara);
-            file2.Close();*/
+            file2.Close();
         }
     }
 }
