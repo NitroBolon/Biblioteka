@@ -58,6 +58,9 @@ namespace Biblioteka
 
             borrowComboBox.ItemsSource = parentWindow.borrows;
             borrowComboBox.DisplayMemberPath = "indeks";
+
+            indexFilter.Text = "Indeks";
+            indexFilter.Opacity = 0.7;
         }
 
         private void zapisz_Click(object sender, RoutedEventArgs e)
@@ -114,7 +117,7 @@ namespace Biblioteka
             }
             catch (Exception)
             {
-
+                CustomMessageBox.ShowDialog("Kara nie została usunięta!");
             }
         }
 
@@ -143,6 +146,18 @@ namespace Biblioteka
         private void indexFilter_TextChanged(object sender, TextChangedEventArgs e)
         {
             CollectionViewSource.GetDefaultView(listView.ItemsSource).Refresh();
+        }
+
+        private void indexFilter_GotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            indexFilter.Text = "";
+            indexFilter.Opacity = 1;
+        }
+
+        private void indexFilter_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            indexFilter.Text = "Indeks";
+            indexFilter.Opacity = 0.7;
         }
     }
 }

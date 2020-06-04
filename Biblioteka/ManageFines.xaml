@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:Biblioteka"
              mc:Ignorable="d"  Loaded="ManageFines_Loaded"
              d:DesignHeight="450" d:DesignWidth="800">
+    
     <Grid Margin="10">
         <DockPanel>
             <DockPanel DockPanel.Dock="Top" HorizontalAlignment="Left" Margin="10,0,0,0">
@@ -13,7 +14,7 @@
                     <Label>Filtrowanie</Label>
                 </DockPanel>
                 <DockPanel>
-                    <TextBox x:Name="indexFilter" Style="{StaticResource CustomTextBoxStyle}" Width="210" Height="30" TextChanged="indexFilter_TextChanged"></TextBox>
+                    <TextBox x:Name="indexFilter" Style="{StaticResource CustomTextBoxStyle}" Width="210" Height="30" TextChanged="indexFilter_TextChanged" GotKeyboardFocus="indexFilter_GotKeyboardFocus" LostKeyboardFocus="indexFilter_LostKeyboardFocus"></TextBox>
                 </DockPanel>
             </DockPanel>
             <DockPanel DockPanel.Dock="Top">

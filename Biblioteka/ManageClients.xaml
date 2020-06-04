@@ -6,22 +6,23 @@
              xmlns:local="clr-namespace:Biblioteka"
              mc:Ignorable="d"  Loaded="ManageClients_Loaded"
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Margin="50,50,50,50">
+    
+    <Grid Margin="30,30,30,30">
         <Grid.RowDefinitions>
             <RowDefinition Height="313*"/>
             <RowDefinition Height="37*"/>
         </Grid.RowDefinitions>
         <DockPanel Grid.RowSpan="2">
-            <DockPanel DockPanel.Dock="Top" HorizontalAlignment="Left" Width="690"  Margin="10,0,230,0">
+            <DockPanel DockPanel.Dock="Top" HorizontalAlignment="Left" Width="690"  Margin="10,0,0,0">
                 <DockPanel DockPanel.Dock="Top">
                     <Label>Filtrowanie</Label>
                 </DockPanel>
                 <DockPanel>
-                    <TextBox Style="{StaticResource CustomTextBoxStyle}" Width="210" Height="30" Text="Nazwisko"></TextBox>
-                    <TextBox Style="{StaticResource CustomTextBoxStyle}" Width="210" Height="30" Margin="0,0,225,0" Text="Imie"></TextBox>
+                    <TextBox DockPanel.Dock="Left" x:Name="surnameFilter" Style="{StaticResource CustomTextBoxStyle}" Width="210" Height="30" TextChanged="surnameFilter_TextChanged" GotKeyboardFocus="surnameFilter_GotKeyboardFocus" LostKeyboardFocus="surnameFilter_LostKeyboardFocus"></TextBox>
+                    <TextBox HorizontalAlignment="Left" x:Name="nameFilter" Style="{StaticResource CustomTextBoxStyle}" Width="210" Height="30" Margin="20,0,0,0" TextChanged="nameFilter_TextChanged" GotKeyboardFocus="nameFilter_GotKeyboardFocus" LostKeyboardFocus="nameFilter_LostKeyboardFocus"></TextBox>
                 </DockPanel>
             </DockPanel>
-            <DockPanel DockPanel.Dock="Top" Margin="0,0,0,-15">
+            <DockPanel DockPanel.Dock="Top" Margin="0,0,0,0">
                 <StackPanel DockPanel.Dock="Right" Margin="10" MinWidth="180" Width="201">
                     <Label>Indeks</Label>
                     <TextBox Style="{StaticResource CustomTextBoxStyle}" Name="indexInput"></TextBox>
@@ -38,7 +39,7 @@
                     </StackPanel>
                 </StackPanel>
 
-                <ListView x:Name="listView" Margin="10" Style ="{StaticResource CustomListView}" Width="441" SelectionChanged="listView_SelectionChanged">
+                <ListView HorizontalAlignment="Left" x:Name="listView" Margin="10 10 10 10" Style ="{StaticResource CustomListView}" Width="441" SelectionChanged="listView_SelectionChanged">
                     <ListView.Resources>
                         <ContextMenu x:Key="ItemContextMenu">
                             <MenuItem Header="Edytuj" Command="{Binding Path=DataContext.MoreInfo, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ListView}}" Background="WhiteSmoke" Click="Edit" />
