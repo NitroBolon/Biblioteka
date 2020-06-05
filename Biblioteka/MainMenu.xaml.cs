@@ -62,7 +62,7 @@ namespace Biblioteka
             }
             file.Close();
 
-            Wypozyczenie z = new Wypozyczenie();
+            Wypozyczenie z=new Wypozyczenie();
             file = new System.IO.StreamReader("../../data/kary.txt");
             while ((line = file.ReadLine()) != null)
             {
@@ -96,9 +96,9 @@ namespace Biblioteka
                 file2.WriteLine(borrows[i].indeks + "_" + borrows[i].indeks_uzytkownika.indeks + "_" + borrows[i].indeks_ksiazki.indeks);
             file2.Close();
 
-            file2 = new System.IO.StreamWriter("../../data/test.txt");
-            for (int i = 0; i < borrows.Count; i++)
-                file2.WriteLine(fines[i].wypozyczenie.indeks + "_" + fines[i].data_wypozyczenia + "_" + fines[i].data_zwrotu);
+            file2 = new System.IO.StreamWriter("kary.txt");
+            for (int i = 0; i < fines.Count; i++)
+                file2.WriteLine(fines[i].wypozyczenie.indeks + "_" + fines[i].data_wypozyczenia + "_" + fines[i].data_zwrotu + "_" + fines[i].kara);
             file2.Close();
         }
     }

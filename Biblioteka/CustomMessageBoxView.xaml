@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Biblioteka"
         mc:Ignorable="d"
-        Title="CustomMessageBoxView" Height="150" Width="250" MaxHeight="500" AllowsTransparency="True" WindowStyle="None" Background="Transparent" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+        Title="CustomMessageBoxView" Height="200" Width="300" MaxHeight="500" AllowsTransparency="True" WindowStyle="None" Background="Transparent" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Grid>
 
         <!--<Grid x:Name="gView" VerticalAlignment="Bottom" Height="120">
@@ -40,10 +40,10 @@
             </DockPanel>
 
             <DockPanel DockPanel.Dock="Bottom">
-                <Grid x:Name="gView" VerticalAlignment="Center" HorizontalAlignment="Center" Width="250" Height="120">
+                <Grid x:Name="gView" VerticalAlignment="Center" HorizontalAlignment="Center" Width="300" Height="170">
                     <Border Background="AliceBlue" CornerRadius="0 0 10 10"/>
                     <StackPanel>
-                        <TextBox x:Name="wiadomosc" Height="60" TextWrapping="Wrap" FontSize="16" Margin="10 10 10 0" TextAlignment="Center" Style="{StaticResource CustomNoBorderTextBoxStyle}" IsReadOnly="True" IsEnabled="False" VerticalContentAlignment="Center">
+                        <TextBox x:Name="wiadomosc" Height="100" TextWrapping="Wrap" FontSize="16" Margin="10 10 10 0" TextAlignment="Center" Style="{StaticResource CustomNoBorderTextBoxStyle}" IsReadOnly="True" IsEnabled="False" VerticalContentAlignment="Center">
                         </TextBox>
                         <Grid>
                             <Button x:Name="tak" Margin="0 0 100 0" Content="Tak" FontSize="16" Visibility="Hidden"  Style="{StaticResource CustomButtonStyle}" Width="75" Height="30" Click="ReturnValue_Click" Uid="1"/>

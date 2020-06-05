@@ -46,6 +46,7 @@
                             <Button x:Name="del" Click="wyjdz_Click"  Style="{StaticResource CustomButtonStyle}">Wyjdź</Button>
                         </StackPanel>
                     </StackPanel>
+                    
                     <ListView Margin="10" Width="460" x:Name="borrowList" Style ="{StaticResource CustomListView}">
                         <ListView.Resources>
                             <ContextMenu x:Key="ItemContextMenu">
