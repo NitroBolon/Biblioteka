@@ -192,3 +192,8 @@ C:\Users\Bolo\Desktop\bbt\Biblioteka\Biblioteka\bin\Debug\EntityFramework.xml
 C:\Users\Bolo\Desktop\bbt\Biblioteka\Biblioteka\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Bolo\Desktop\bbt\Biblioteka\Biblioteka\obj\Debug\Biblioteka.csproj.CopyComplete
 C:\Users\Bolo\Desktop\bbt\Biblioteka\Biblioteka\obj\Debug\Biblioteka.csproj.CoreCompileInputs.cache
+C:\Users\Bolo\Desktop\bbt\Biblioteka\Biblioteka\bin\Debug\Syncfusion.Compression.Base.dll
+C:\Users\Bolo\Desktop\bbt\Biblioteka\Biblioteka\bin\Debug\Syncfusion.Licensing.dll
+C:\Users\Bolo\Desktop\bbt\Biblioteka\Biblioteka\bin\Debug\Syncfusion.Pdf.Base.dll
+C:\Users\Bolo\Desktop\bbt\Biblioteka\Biblioteka\bin\Debug\Syncfusion.Compression.Base.xml
+C:\Users\Bolo\Desktop\bbt\Biblioteka\Biblioteka\bin\Debug\Syncfusion.Pdf.Base.xml

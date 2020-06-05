@@ -24,6 +24,7 @@ namespace Biblioteka
     {
         public Wypozyczenie borrow;
         public int indeks;
+        MainMenu parentWindow;
         public ManageBorrows()
         {
             InitializeComponent();
@@ -31,13 +32,13 @@ namespace Biblioteka
 
         private void wyjdz_Click(object sender, RoutedEventArgs e)
         {
-            MainMenu parentWindow = Window.GetWindow(this) as MainMenu;
+            //MainMenu parentWindow = Window.GetWindow(this) as MainMenu;
             parentWindow.contentBox.Content = new MainMenuView();
         }
 
         private void ManageBorrows_Loaded(object sender, RoutedEventArgs e)
         {
-            MainMenu parentWindow = Window.GetWindow(this) as MainMenu;
+            parentWindow = Window.GetWindow(this) as MainMenu;
             parentWindow.Title = "Bibliotex - Wypozyczenia";
             borrowList.ItemsSource = parentWindow.borrows;
             book.ItemsSource = parentWindow.books;
@@ -54,14 +55,22 @@ namespace Biblioteka
         {
             try  //zapisać
             {
-                MainMenu parentWindow = Window.GetWindow(this) as MainMenu;
+                //MainMenu parentWindow = Window.GetWindow(this) as MainMenu;
                 TextBox ind = (TextBox)index;
                 Uzytkownik uzy = (Uzytkownik)user.SelectedItem;
-                Ksiazka ksi = (Ksiazka) book.SelectedItem;
-
+                Ksiazka ksi = (Ksiazka)book.SelectedItem;
+                bool flag = false;
+                for (int i = 0; i < parentWindow.borrows.Count; i++)
+                {
+                    if (parentWindow.borrows[i].indeks == Int32.Parse(ind.Text)) flag = true;
+                }
                 if (String.IsNullOrEmpty(ind.Text) || String.IsNullOrEmpty(user.Text) || String.IsNullOrEmpty(book.Text))
                 {
                     CustomMessageBox.ShowDialog("Pola nie mogą być puste!");
+                }
+                else if (flag)
+                {
+                    CustomMessageBox.ShowDialog("Podane ID już wystąpiło!");
                 }
                 else
                 {
@@ -79,64 +88,142 @@ namespace Biblioteka
 
         private void Edit(object sender, RoutedEventArgs e)
         {
-            mod.IsEnabled = true;
-            add.IsEnabled = false;
-            del.IsEnabled = false;
-            index.Text = borrow.indeks.ToString();
-            user.SelectedItem = borrow.indeks_uzytkownika;
-            book.SelectedItem = borrow.indeks_ksiazki;
+            //MainMenu parentWindow = Window.GetWindow(this) as MainMenu;
+            Wypozyczenie ind1 = (Wypozyczenie)borrowList.SelectedItem;
+            int ind = ind1.indeks;
+            int x = 0;
+            bool flag = false;
+            try
+            {
+                for (int i = 0; i < parentWindow.borrows.Count; i++)
+                {
+                    if (parentWindow.borrows[i].indeks == Int32.Parse(index.Text)) x++;
+                }
+                if (x > 1) flag = true;
+                if (String.IsNullOrEmpty(index.Text) || String.IsNullOrEmpty(user.Text) || String.IsNullOrEmpty(book.Text))
+                {
+                    CustomMessageBox.ShowDialog("Pola nie mogą być puste!");
+                }
+                else if (flag)
+                {
+                    CustomMessageBox.ShowDialog("Podane ID już wystąpiło!");
+                }
+                else
+                {
+                    int f = -1;
+                    for (int i = 0; i < parentWindow.borrows.Count; i++)
+                    {
+                        if (parentWindow.borrows[i].indeks == indeks) f = i;
+                    }
+
+                    parentWindow.borrows[f].indeks = Int32.Parse(index.Text);
+                    parentWindow.borrows[f].indeks_uzytkownika = (Uzytkownik)user.SelectedItem;
+                    parentWindow.borrows[f].indeks_ksiazki = (Ksiazka)book.SelectedItem; 
+
+                    clearInputs();
+                    CustomMessageBox.ShowDialog("Klient został zapisany poprawnie!");
+                }
+            }
+            catch (Exception)
+            {
+                CustomMessageBox.ShowDialog("Klient nie został zapisany!");
+            }
+            parentWindow.contentBox.Content = new ManageBorrows();
         }
 
         private void Delete(object sender, RoutedEventArgs e)
         {
+            //MainMenu parentWindow = Window.GetWindow(this) as MainMenu;
             try
             {
                 if (CustomMessageBox.ShowDialog("Czy na pewno chcesz skasowac wypożyczenie użytkownika " + borrow.indeks_uzytkownika + " - " + borrow.indeks_ksiazki.tytul + "?", CustomMessageBox.Buttons.Yes_No) == "1")
                 {
-                    MainMenu parentWindow = Window.GetWindow(this) as MainMenu;
-                    parentWindow.borrows.RemoveAt(indeks);
+                    
+                    int f = -1;
+                    for (int i = 0; i < parentWindow.borrows.Count; i++)
+                    {
+                        if (parentWindow.borrows[i].indeks == borrow.indeks) f = i;
+                    }
+                    parentWindow.borrows.RemoveAt(f);
                 }
             }
             catch (Exception)
             {
-
+                CustomMessageBox.ShowDialog("Coś poszło nie tak...");
             }
+            parentWindow.contentBox.Content = new ManageBorrows();
         }
 
         private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Trace.WriteLine("Select");
+            //MainMenu parentWindow = Window.GetWindow(this) as MainMenu;
+            //Trace.WriteLine("Select");
             borrow = (Wypozyczenie)borrowList.SelectedItem;
-            indeks = (int)borrowList.SelectedIndex;
+            
+            if (borrowList.SelectedIndex >= 0 && borrowList.SelectedIndex < parentWindow.borrows.Count)
+            {
+                indeks = borrow.indeks;
+                index.Text = parentWindow.borrows[borrowList.SelectedIndex].indeks.ToString();
+                user.SelectedItem = parentWindow.borrows[borrowList.SelectedIndex].indeks_uzytkownika;
+                book.SelectedItem = parentWindow.borrows[borrowList.SelectedIndex].indeks_ksiazki;
+            }
+
+        }
+        private void user_GotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            if (search_user.Text == "Użytkownik")
+            {
+                search_user.Text = "";
+                search_user.Opacity = 1;
+            }
+            else
+                search_user.Opacity = 1;
         }
 
-        private void edit_Client(object sender, RoutedEventArgs e)
+        private void user_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
         {
-            try
-            {
-                MainMenu parentWindow = Window.GetWindow(this) as MainMenu;
-                TextBox ind = (TextBox)index;
-                Ksiazka ksi = (Ksiazka)book.SelectedItem;
-                Uzytkownik uzy = (Uzytkownik)user.SelectedItem;
+            //MainMenu parentWindow = Window.GetWindow(this) as MainMenu;
+            search_user.Text = "Użytkownik";
+            search_user.Opacity = 0.7;
+            borrowList.ItemsSource = parentWindow.borrows;
+        }
 
-                if (String.IsNullOrEmpty(ind.Text) || String.IsNullOrEmpty(ksi.tytul) || String.IsNullOrEmpty(uzy.imie))
-                {
-                    CustomMessageBox.ShowDialog("Pola nie mogą być puste!");
-                }
-                else
-                {
-                    Wypozyczenie borrow = new Wypozyczenie(Int32.Parse(ind.Text), uzy, ksi);
-                    parentWindow.borrows[indeks] = borrow;
-                    clearInputs();
-                    CustomMessageBox.ShowDialog("Klient został zedytowany poprawnie!");
-                    add.IsEnabled = true;
-                    mod.IsEnabled = false;
-                }
+        private void user_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (parentWindow != null)
+            {
+                var myCollection = parentWindow.borrows;
+                var result = myCollection.Where(w => w.indeks_uzytkownika.imie.Contains(search_user.Text));
+                borrowList.ItemsSource = result;
             }
-            catch (Exception)
-            {
-                CustomMessageBox.ShowDialog("Klient nie został zedytowany!");
+        }
 
+        private void book_GotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            if (search_book.Text == "Książka")
+            {
+                search_book.Text = "";
+                search_book.Opacity = 1;
+            }
+            else
+                search_book.Opacity = 1;
+        }
+
+        private void book_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            //MainMenu parentWindow = Window.GetWindow(this) as MainMenu;
+            search_book.Text = "Książka";
+            search_book.Opacity = 0.7;
+            borrowList.ItemsSource = parentWindow.borrows;
+        }
+
+        private void book_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (parentWindow != null)
+            {
+                var myCollection = parentWindow.borrows;
+                var result = myCollection.Where(w => w.indeks_ksiazki.tytul.Contains(search_book.Text));
+                borrowList.ItemsSource = result;
             }
         }
     }

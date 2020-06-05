@@ -14,6 +14,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Syncfusion.Pdf;
+using Syncfusion.Pdf.Graphics;
+using System.ComponentModel;
+using System.Drawing;
 
 namespace Biblioteka
 {
@@ -158,6 +162,34 @@ namespace Biblioteka
         {
             indexFilter.Text = "Indeks";
             indexFilter.Opacity = 0.7;
+        }
+
+        private void PDF(object sender, RoutedEventArgs e)
+        {
+            Kara kara = (Kara)listView.SelectedItem;
+            using (PdfDocument document = new PdfDocument())
+            {
+                PdfPage page = document.Pages.Add();
+
+                PdfGraphics graphics = page.Graphics;
+
+                PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 20);
+                PdfFont font2 = new PdfStandardFont(PdfFontFamily.Helvetica, 15);
+                PdfFont font3 = new PdfStandardFont(PdfFontFamily.Helvetica, 13);
+
+                graphics.DrawString("Upomnienie", font, PdfBrushes.Black, new PointF(0,0));
+                graphics.DrawString("Upomnina sie uzytkownika "+kara.wypozyczenie.indeks_uzytkownika.imie+" " + kara.wypozyczenie.indeks_uzytkownika.nazwisko + ".", font2, PdfBrushes.Black, new PointF(0, 80));
+                graphics.DrawString("Upomnienie dotyczy ksiazki " + kara.wypozyczenie.indeks_ksiazki.tytul + ".", font2, PdfBrushes.Black, new PointF(0, 120));
+                graphics.DrawString("Wypozyczono: " + kara.data_wypozyczenia.ToString() + " " + ".", font2, PdfBrushes.Black, new PointF(0, 160));
+                graphics.DrawString("Naliczona kara: " + kara.kara.ToString() + "zl.", font2, PdfBrushes.Black, new PointF(0, 200));
+                graphics.DrawString("Zarzad biblioteki Bibliotex", font3, PdfBrushes.Black, new PointF(250, 240));
+                PdfBitmap image = new PdfBitmap("karaObr.png");
+
+                graphics.DrawImage(image, 50, 280);
+                string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+                document.Save(path+"/upo"+ kara.wypozyczenie.indeks.ToString()+".pdf");
+            }
         }
     }
 }

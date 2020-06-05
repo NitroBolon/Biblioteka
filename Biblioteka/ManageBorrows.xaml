@@ -14,8 +14,8 @@
                         <Label>Filtrowanie</Label>
                     </DockPanel>
                     <DockPanel>
-                        <TextBox x:Name="search_user" Style="{StaticResource CustomTextBoxStyle}" Width="220" Height="30" Text="Użytkownik" ></TextBox>
-                        <TextBox x:Name="search_book" Style="{StaticResource CustomTextBoxStyle}" Width="220" Height="30" Text="Książka" Margin="10,0,0,0"></TextBox>
+                        <TextBox x:Name="search_user" Style="{StaticResource CustomTextBoxStyle}" Width="220" Height="30" Text="Użytkownik" TextChanged="user_TextChanged" GotKeyboardFocus="user_GotKeyboardFocus" LostKeyboardFocus="user_LostKeyboardFocus"></TextBox>
+                        <TextBox x:Name="search_book" Style="{StaticResource CustomTextBoxStyle}" Width="220" Height="30" Text="Książka" Margin="10,0,0,0" TextChanged="book_TextChanged" GotKeyboardFocus="book_GotKeyboardFocus" LostKeyboardFocus="book_LostKeyboardFocus"></TextBox>
                     </DockPanel>
                 </DockPanel>
                 <DockPanel DockPanel.Dock="Top" Margin="0,0,0,0">
@@ -42,15 +42,14 @@
                         </ComboBox>
                         <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
                             <Button x:Name="add" Margin="0,0,10,0" Click="save_Borrow" Style="{StaticResource CustomButtonStyle}">Dodaj nowy</Button>
-                            <Button x:Name="mod" Margin="0,0,10,0" Click="edit_Client" Style="{StaticResource CustomButtonStyle}">Modyfikuj</Button>
+                            <Button x:Name="mod" Margin="0,0,10,0" Click="Edit" Style="{StaticResource CustomButtonStyle}">Modyfikuj</Button>
                             <Button x:Name="del" Click="wyjdz_Click"  Style="{StaticResource CustomButtonStyle}">Wyjdź</Button>
                         </StackPanel>
                     </StackPanel>
                     
-                    <ListView Margin="10" Width="460" x:Name="borrowList" Style ="{StaticResource CustomListView}">
+                    <ListView SelectionChanged="listView_SelectionChanged" Margin="10" Width="460" x:Name="borrowList" Style ="{StaticResource CustomListView}">
                         <ListView.Resources>
                             <ContextMenu x:Key="ItemContextMenu">
-                                <MenuItem Header="Edytuj" Command="{Binding Path=DataContext.MoreInfo, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ListView}}" Background="WhiteSmoke" Click="Edit" />
                                 <MenuItem Header="Usuń" Command="{Binding Path=DataContext.MoreInfo, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ListView}}" Background="WhiteSmoke" Click="Delete" />
                             </ContextMenu>
                         </ListView.Resources>

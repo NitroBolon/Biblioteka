@@ -18,9 +18,9 @@
                 <Label>Filtrowanie</Label>
               </DockPanel>
               <DockPanel>
-                <TextBox Style="{StaticResource CustomTextBoxStyle}" Width="210" Height="30" Text="Autor"></TextBox>
-                <TextBox Style="{StaticResource CustomTextBoxStyle}" Width="210" Height="30" Margin="0,0,225,0" Text="Tytuł"></TextBox>
-              </DockPanel>
+                        <TextBox DockPanel.Dock="Left" x:Name="tytul" Style="{StaticResource CustomTextBoxStyle}" Width="210" Height="30" TextChanged="user_TextChanged" GotKeyboardFocus="user_GotKeyboardFocus" LostKeyboardFocus="user_LostKeyboardFocus"></TextBox>
+                        <TextBox HorizontalAlignment="Left" x:Name="autor" Style="{StaticResource CustomTextBoxStyle}" Width="210" Height="30" Margin="20,0,0,0" TextChanged="book_TextChanged" GotKeyboardFocus="book_GotKeyboardFocus" LostKeyboardFocus="book_LostKeyboardFocus"></TextBox>
+                    </DockPanel>
             </DockPanel>
           <DockPanel DockPanel.Dock="Top" Margin="0,0,0,-15">
                     <StackPanel DockPanel.Dock="Right" Margin="10" MinWidth="200">

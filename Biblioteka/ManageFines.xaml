@@ -39,6 +39,7 @@
                     <ListView.Resources>
                         <ContextMenu x:Key="ItemContextMenu">
                             <MenuItem Header="Usuń" Command="{Binding Path=DataContext.MoreInfo, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ListView}}" Background="WhiteSmoke" Click="Delete" />
+                            <MenuItem Header="Utwórz upomnienie" Command="{Binding Path=DataContext.MoreInfo, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ListView}}" Background="WhiteSmoke" Click="PDF" />
                         </ContextMenu>
                     </ListView.Resources>
 
